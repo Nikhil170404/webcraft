@@ -1,0 +1,332 @@
+import React, { useEffect, useState } from 'react';
+import { motion, useAnimation, useScroll, useTransform } from 'framer-motion';
+import { ChevronDown, Sparkles, Zap, Code2, Palette, Rocket } from 'lucide-react';
+
+const Hero = () => {
+  const controls = useAnimation();
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 500], [0, 150]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({
+        x: (e.clientX - window.innerWidth / 2) / 25,
+        y: (e.clientY - window.innerHeight / 2) / 25,
+      });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.offsetTop - offset;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden gradient-bg">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Large decorative shapes inspired by business card */}
+        <motion.div
+          style={{
+            x: mousePosition.x,
+            y: mousePosition.y,
+          }}
+          className="absolute top-20 left-20 w-64 h-64 opacity-20"
+        >
+          <motion.div
+            animate={{
+              rotate: [0, 360],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="w-full h-full bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full blur-3xl"
+          />
+        </motion.div>
+
+        {/* Star/burst shape like in business card */}
+        <motion.div
+          style={{
+            x: mousePosition.x * -0.5,
+            y: mousePosition.y * -0.5,
+          }}
+          className="absolute top-1/4 right-20 w-48 h-48"
+        >
+          <motion.div
+            animate={{ rotate: [0, 360] }}
+            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+            className="relative w-full h-full"
+          >
+            {[...Array(8)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute top-1/2 left-1/2 w-2 h-16 bg-gradient-to-t from-primary-400 to-secondary-400 rounded-full opacity-30"
+                style={{
+                  transformOrigin: '1px 0px',
+                  transform: `translate(-50%, -100%) rotate(${i * 45}deg)`,
+                }}
+                animate={{
+                  scaleY: [1, 1.5, 1],
+                  opacity: [0.3, 0.6, 0.3],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  delay: i * 0.2,
+                  ease: "easeInOut"
+                }}
+              />
+            ))}
+          </motion.div>
+        </motion.div>
+
+        {/* Floating organic shapes */}
+        <motion.div
+          style={{
+            x: mousePosition.x * 0.3,
+            y: mousePosition.y * 0.3,
+          }}
+          className="absolute bottom-20 left-1/4 w-32 h-32 opacity-25"
+        >
+          <motion.div
+            animate={{
+              borderRadius: [
+                "60% 40% 30% 70%/60% 30% 70% 40%",
+                "30% 60% 70% 40%/50% 60% 30% 60%",
+                "60% 40% 30% 70%/60% 30% 70% 40%"
+              ],
+              rotate: [0, 360],
+            }}
+            transition={{
+              duration: 12,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="w-full h-full bg-gradient-to-r from-secondary-400 to-primary-400 blur-xl"
+          />
+        </motion.div>
+
+        {/* Additional floating elements */}
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-4 h-4 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-full opacity-40"
+            style={{
+              top: `${20 + i * 15}%`,
+              left: `${10 + i * 12}%`,
+            }}
+            animate={{
+              y: [0, -20, 0],
+              x: [0, 10, 0],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: 4 + i,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 0.5,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Main Content */}
+      <motion.div
+        style={{ y, opacity }}
+        className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto"
+      >
+        {/* Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="inline-flex items-center px-4 py-2 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 shadow-soft mb-8"
+        >
+          <Sparkles className="w-4 h-4 text-primary-600 mr-2" />
+          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+            AI-Enhanced Web Development
+          </span>
+          <motion.div
+            animate={{ scale: [1, 1.2, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="w-2 h-2 bg-green-500 rounded-full ml-2"
+          />
+        </motion.div>
+
+        {/* Main Heading */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold mb-6 leading-tight"
+        >
+          <span className="block">Build Your</span>
+          <span className="block text-gradient">Digital Future</span>
+          <span className="block">with WebCraft</span>
+        </motion.h1>
+
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="text-lg sm:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
+        >
+          We create{' '}
+          <motion.span
+            animate={{ color: ['#2563eb', '#dc2626', '#2563eb'] }}
+            transition={{ duration: 3, repeat: Infinity }}
+            className="font-semibold"
+          >
+            exceptional websites
+          </motion.span>{' '}
+          for small businesses with AI-enhanced technology, lightning-fast performance, 
+          and pixel-perfect design at fair prices.
+        </motion.p>
+
+        {/* Feature Pills */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+          className="flex flex-wrap justify-center gap-4 mb-12"
+        >
+          {[
+            { icon: Zap, text: 'Lightning Fast', color: 'from-yellow-400 to-orange-500' },
+            { icon: Code2, text: 'AI-Enhanced', color: 'from-blue-400 to-purple-500' },
+            { icon: Palette, text: 'Beautiful Design', color: 'from-pink-400 to-red-500' },
+            { icon: Rocket, text: 'SEO Optimized', color: 'from-green-400 to-blue-500' },
+          ].map((feature, index) => (
+            <motion.div
+              key={feature.text}
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
+              whileHover={{ scale: 1.05, y: -2 }}
+              className="flex items-center px-4 py-2 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-full border border-gray-200/50 dark:border-gray-700/50 shadow-soft"
+            >
+              <feature.icon className={`w-4 h-4 mr-2 bg-gradient-to-r ${feature.color} bg-clip-text text-transparent`} />
+              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                {feature.text}
+              </span>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* CTA Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+        >
+          <motion.button
+            onClick={() => scrollToSection('contact')}
+            className="btn-primary text-lg px-8 py-4 min-w-[200px]"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span className="flex items-center">
+              Start Your Project
+              <motion.div
+                animate={{ x: [0, 4, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+                className="ml-2"
+              >
+                <Rocket className="w-5 h-5" />
+              </motion.div>
+            </span>
+          </motion.button>
+
+          <motion.button
+            onClick={() => scrollToSection('portfolio')}
+            className="btn-outline text-lg px-8 py-4 min-w-[200px]"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            View Our Work
+          </motion.button>
+        </motion.div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+          className="flex flex-col items-center"
+        >
+          <span className="text-sm text-gray-500 dark:text-gray-400 mb-2">
+            Scroll to explore
+          </span>
+          <motion.button
+            onClick={() => scrollToSection('about')}
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="p-2 rounded-full hover:bg-white/20 dark:hover:bg-gray-800/20 transition-colors"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <ChevronDown className="w-6 h-6 text-gray-500 dark:text-gray-400" />
+          </motion.button>
+        </motion.div>
+      </motion.div>
+
+      {/* Stats Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1.0 }}
+        className="absolute bottom-8 left-0 right-0 z-10"
+      >
+        <div className="container-custom">
+          <div className="glass rounded-2xl p-6 mx-4">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+              {[
+                { number: '50+', label: 'Projects Completed' },
+                { number: '99%', label: 'Client Satisfaction' },
+                { number: '24/7', label: 'Support Available' },
+                { number: '2x', label: 'Faster Loading' },
+              ].map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
+                  className="group"
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    className="text-2xl lg:text-3xl font-display font-bold text-gradient mb-1"
+                  >
+                    {stat.number}
+                  </motion.div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                    {stat.label}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </section>
+  );
+};
+
+export default Hero;
