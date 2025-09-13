@@ -265,7 +265,7 @@ const Portfolio = () => {
             variants={itemVariants}
             className="text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
-            Take a look at some of our recent work and see how we've helped businesses 
+            Take a look at some of our recent work and see how we helped businesses 
             transform their digital presence and achieve remarkable growth.
           </motion.p>
         </motion.div>
@@ -277,7 +277,7 @@ const Portfolio = () => {
           animate={inView ? "visible" : "hidden"}
           className="flex flex-wrap justify-center gap-2 mb-12"
         >
-          {filters.map((filter, index) => (
+          {filters.map((filter, _index) => (
             <motion.button
               key={filter.id}
               variants={itemVariants}
@@ -305,7 +305,7 @@ const Portfolio = () => {
             animate="visible"
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
           >
-            {filteredProjects.map((project, index) => (
+            {filteredProjects.map((project, _index) => (
               <motion.div
                 key={project.id}
                 variants={itemVariants}
@@ -389,7 +389,7 @@ const Portfolio = () => {
                 Results That Speak for Themselves
               </h3>
               <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Here's what our clients achieve when they work with WebCraft.
+                Here what our clients achieve when they work with WebCraft.
               </p>
             </div>
 
@@ -399,7 +399,7 @@ const Portfolio = () => {
                 { number: '300%', label: 'Average ROI Increase', icon: BarChart3 },
                 { number: '99%', label: 'Client Satisfaction', icon: Users },
                 { number: '2x', label: 'Faster Than Competition', icon: Globe },
-              ].map((stat, index) => (
+              ].map((stat, _index) => (
                 <motion.div
                   key={stat.label}
                   variants={itemVariants}
@@ -432,7 +432,7 @@ const Portfolio = () => {
               Ready to Join Our Success Stories?
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Let's create something amazing together. Your project could be our next case study.
+              Let create something amazing together. Your project could be our next case study.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button
@@ -516,9 +516,9 @@ const Portfolio = () => {
                       Technologies Used:
                     </h4>
                     <div className="flex flex-wrap gap-2 mb-6">
-                      {selectedProject.technologies.map((tech, index) => (
+                      {selectedProject.technologies.map((tech, _index) => (
                         <span
-                          key={index}
+                          key={tech}
                           className="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-full text-sm"
                         >
                           {tech}
@@ -530,8 +530,8 @@ const Portfolio = () => {
                       Key Features:
                     </h4>
                     <ul className="space-y-2 mb-6">
-                      {selectedProject.features.map((feature, index) => (
-                        <li key={index} className="flex items-center text-gray-600 dark:text-gray-300">
+                      {selectedProject.features.map((feature, _index) => (
+                        <li key={feature} className="flex items-center text-gray-600 dark:text-gray-300">
                           <div className="w-2 h-2 bg-primary-600 rounded-full mr-3" />
                           {feature}
                         </li>

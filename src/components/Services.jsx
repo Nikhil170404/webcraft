@@ -150,6 +150,17 @@ const Services = () => {
     },
   };
 
+  // Helper function to create star rating
+  const renderStars = () => {
+    const stars = [];
+    for (let i = 0; i < 5; i++) {
+      stars.push(
+        <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
+      );
+    }
+    return stars;
+  };
+
   return (
     <section className="section-padding gradient-bg relative overflow-hidden">
       {/* Background Elements */}
@@ -210,7 +221,7 @@ const Services = () => {
         >
           {services.map((service, index) => (
             <motion.div
-              key={service.title}
+              key={index}
               variants={itemVariants}
               whileHover={{ y: -10, scale: 1.02 }}
               className="card card-hover cursor-pointer group relative overflow-hidden"
@@ -253,7 +264,7 @@ const Services = () => {
         {/* Detailed Service View */}
         <AnimatePresence mode="wait">
           <motion.div
-            key={activeService}
+            key={`service-${activeService}`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -264,16 +275,14 @@ const Services = () => {
               <div>
                 <div className="flex items-center mb-6">
                   <div className={`w-20 h-20 bg-gradient-to-r ${services[activeService].color} rounded-xl flex items-center justify-center mr-6`}>
-                    <services[activeService].icon className="w-10 h-10 text-white" />
+                    
                   </div>
                   <div>
                     <h3 className="text-2xl lg:text-3xl font-display font-bold text-gray-900 dark:text-white mb-2">
                       {services[activeService].title}
                     </h3>
                     <div className="flex items-center">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
-                      ))}
+                      {renderStars()}
                       <span className="text-sm text-gray-600 dark:text-gray-400 ml-2">
                         5.0 (50+ reviews)
                       </span>
@@ -307,13 +316,13 @@ const Services = () => {
 
               <div>
                 <h4 className="text-xl font-display font-bold text-gray-900 dark:text-white mb-6">
-                  What's Included:
+                  What&apos;s Included:
                 </h4>
                 
                 <div className="space-y-4">
                   {services[activeService].features.map((feature, index) => (
                     <motion.div
-                      key={feature}
+                      key={`feature-${index}`}
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3, delay: index * 0.1 }}
@@ -349,7 +358,7 @@ const Services = () => {
         <div className="flex flex-wrap justify-center gap-2 mt-8">
           {services.map((service, index) => (
             <motion.button
-              key={service.title}
+              key={`nav-${index}`}
               onClick={() => setActiveService(index)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                 activeService === index
@@ -376,7 +385,7 @@ const Services = () => {
               Ready to Transform Your Business?
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-              Let's discuss your project and create a custom solution that drives real results for your business.
+              Let&apos;s discuss your project and create a custom solution that drives real results for your business.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}

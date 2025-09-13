@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { motion, useAnimation, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ChevronDown, Sparkles, Zap, Code2, Palette, Rocket } from 'lucide-react';
 
 const Hero = () => {
-  const controls = useAnimation();
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 500], [0, 150]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);

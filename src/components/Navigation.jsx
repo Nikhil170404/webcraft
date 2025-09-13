@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Moon, Sun, Code, Palette, Zap } from 'lucide-react';
 
@@ -7,14 +7,15 @@ const Navigation = ({ darkMode, toggleDarkMode }) => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
-  const navItems = [
+  // Memoize navItems to prevent useEffect dependency issues
+  const navItems = useMemo(() => [
     { id: 'home', label: 'Home', icon: Code },
     { id: 'about', label: 'About', icon: Palette },
     { id: 'services', label: 'Services', icon: Zap },
     { id: 'features', label: 'Features', icon: Code },
     { id: 'portfolio', label: 'Portfolio', icon: Palette },
     { id: 'contact', label: 'Contact', icon: Zap },
-  ];
+  ], []);
 
   useEffect(() => {
     const handleScroll = () => {

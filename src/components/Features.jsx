@@ -145,7 +145,7 @@ const Features = () => {
     },
     support: {
       title: '24/7 Support & Maintenance',
-      subtitle: 'We've got your back, always',
+      subtitle: 'We\'ve got your back, always',
       features: [
         {
           icon: Clock,
@@ -261,8 +261,8 @@ const Features = () => {
             variants={itemVariants}
             className="text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
-            We don't just build websites – we create digital experiences that drive results. 
-            Here's what makes WebCraft the perfect choice for your business.
+            We dont just build websites – we create digital experiences that drive results. 
+            Heres what makes WebCraft the perfect choice for your business.
           </motion.p>
         </motion.div>
 
@@ -273,7 +273,7 @@ const Features = () => {
           animate={inView ? "visible" : "hidden"}
           className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20"
         >
-          {mainFeatures.map((feature, index) => (
+          {mainFeatures.map((feature, _index) => (
             <motion.div
               key={feature.title}
               variants={itemVariants}
@@ -494,7 +494,7 @@ const Features = () => {
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
               Join hundreds of satisfied clients who have transformed their business with WebCraft. 
-              Let's build something amazing together.
+              Lets build something amazing together.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button

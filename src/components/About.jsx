@@ -139,9 +139,9 @@ const About = () => {
             variants={itemVariants}
             className="text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
-            We're not just developers – we're digital craftsmen who believe every small business 
+            We are not just developers – we are digital craftsmen who believe every small business 
             deserves a world-class online presence. Founded by Prashant, WebCraft combines 
-            cutting-edge technology with creative design to deliver websites that don't just look 
+            cutting-edge technology with creative design to deliver websites that do not just look 
             amazing, but drive real business results.
           </motion.p>
         </motion.div>
@@ -169,8 +169,8 @@ const About = () => {
                 a process that delivers enterprise-quality websites at small business prices.
               </p>
               <p>
-                Today, we're proud to have helped dozens of businesses transform their online 
-                presence and achieve their digital goals. But we're just getting started.
+                Today, we are proud to have helped dozens of businesses transform their online 
+                presence and achieve their digital goals. But we are just getting started.
               </p>
             </div>
             
@@ -212,8 +212,8 @@ const About = () => {
                     Founder & Web Developer
                   </p>
                   <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-                    "Every website I create is a bridge between businesses and their dreams. 
-                    Technology should empower, not complicate."
+                    Every website I create is a bridge between businesses and their dreams. 
+                    Technology should empower ,not complicate.
                   </p>
                 </div>
               </motion.div>
@@ -250,7 +250,7 @@ const About = () => {
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
+            {values.map((value, _index) => (
               <motion.div
                 key={value.title}
                 variants={itemVariants}

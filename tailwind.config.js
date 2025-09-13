@@ -138,6 +138,11 @@ export default {
       },
       screens: {
         'xs': '475px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
         '3xl': '1600px',
       },
       spacing: {
@@ -155,12 +160,44 @@ export default {
         'large': '0 10px 40px -10px rgba(0, 0, 0, 0.1), 0 20px 50px -10px rgba(0, 0, 0, 0.04)',
         'colored': '0 10px 40px -10px rgba(37, 99, 235, 0.2)',
         'colored-red': '0 10px 40px -10px rgba(220, 38, 38, 0.2)',
+        // Dark mode shadows
+        'dark-soft': '0 2px 15px -3px rgba(0, 0, 0, 0.2), 0 10px 20px -2px rgba(0, 0, 0, 0.1)',
+        'dark-medium': '0 4px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 30px -5px rgba(0, 0, 0, 0.1)',
+        'dark-large': '0 10px 40px -10px rgba(0, 0, 0, 0.4), 0 20px 50px -10px rgba(0, 0, 0, 0.2)',
       },
       aspectRatio: {
         '4/3': '4 / 3',
         '3/2': '3 / 2',
         '2/3': '2 / 3',
         '9/16': '9 / 16',
+      },
+      fontSize: {
+        'xs': ['0.75rem', { lineHeight: '1rem' }],
+        'sm': ['0.875rem', { lineHeight: '1.25rem' }],
+        'base': ['1rem', { lineHeight: '1.5rem' }],
+        'lg': ['1.125rem', { lineHeight: '1.75rem' }],
+        'xl': ['1.25rem', { lineHeight: '1.75rem' }],
+        '2xl': ['1.5rem', { lineHeight: '2rem' }],
+        '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
+        '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
+        '5xl': ['3rem', { lineHeight: '1' }],
+        '6xl': ['3.75rem', { lineHeight: '1' }],
+        '7xl': ['4.5rem', { lineHeight: '1' }],
+        '8xl': ['6rem', { lineHeight: '1' }],
+        '9xl': ['8rem', { lineHeight: '1' }],
+      },
+      maxWidth: {
+        'xs': '20rem',
+        'sm': '24rem',
+        'md': '28rem',
+        'lg': '32rem',
+        'xl': '36rem',
+        '2xl': '42rem',
+        '3xl': '48rem',
+        '4xl': '56rem',
+        '5xl': '64rem',
+        '6xl': '72rem',
+        '7xl': '80rem',
       },
     },
   },
@@ -179,6 +216,54 @@ export default {
           'background': 'rgba(0, 0, 0, 0.25)',
           'backdrop-filter': 'blur(10px)',
           'border': '1px solid rgba(255, 255, 255, 0.1)',
+        },
+        // Responsive text utilities
+        '.text-responsive-xs': {
+          '@apply text-xs sm:text-sm': {},
+        },
+        '.text-responsive-sm': {
+          '@apply text-sm sm:text-base': {},
+        },
+        '.text-responsive-base': {
+          '@apply text-base sm:text-lg': {},
+        },
+        '.text-responsive-lg': {
+          '@apply text-lg sm:text-xl lg:text-2xl': {},
+        },
+        '.text-responsive-xl': {
+          '@apply text-xl sm:text-2xl lg:text-3xl': {},
+        },
+        '.text-responsive-2xl': {
+          '@apply text-2xl sm:text-3xl lg:text-4xl xl:text-5xl': {},
+        },
+        '.text-responsive-3xl': {
+          '@apply text-3xl sm:text-4xl lg:text-5xl xl:text-6xl': {},
+        },
+        // Responsive spacing utilities
+        '.gap-responsive': {
+          '@apply gap-4 sm:gap-6 lg:gap-8': {},
+        },
+        '.gap-responsive-sm': {
+          '@apply gap-2 sm:gap-4 lg:gap-6': {},
+        },
+        '.gap-responsive-lg': {
+          '@apply gap-6 sm:gap-8 lg:gap-12': {},
+        },
+        '.p-responsive': {
+          '@apply p-4 sm:p-6 lg:p-8': {},
+        },
+        '.p-responsive-lg': {
+          '@apply p-6 sm:p-8 lg:p-12': {},
+        },
+        // Dark mode utilities
+        '.dark-shadow-soft': {
+          '@apply shadow-dark-soft': {},
+        },
+        '.dark-shadow-medium': {
+          '@apply shadow-dark-medium': {},
+        },
+        '.dark-shadow-large': {
+          '@apply shadow-dark-large': {},
         },
       }
       addUtilities(newUtilities)

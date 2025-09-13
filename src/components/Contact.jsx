@@ -210,7 +210,7 @@ const Contact = () => {
             variants={itemVariants}
             className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-gray-900 dark:text-white mb-6"
           >
-            Let's Build Something{' '}
+            Lets Build Something{' '}
             <span className="text-gradient">Amazing Together</span>
           </motion.h2>
           
@@ -218,7 +218,7 @@ const Contact = () => {
             variants={itemVariants}
             className="text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
-            Ready to transform your digital presence? We'd love to hear about your project 
+            Ready to transform your digital presence? We will love to hear about your project 
             and discuss how we can help you achieve your business goals.
           </motion.p>
         </motion.div>
@@ -230,7 +230,7 @@ const Contact = () => {
           animate={inView ? "visible" : "hidden"}
           className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
         >
-          {contactInfo.map((info, index) => (
+          {contactInfo.map((info, _index) => (
             <motion.div
               key={info.title}
               variants={itemVariants}
@@ -519,8 +519,8 @@ const Contact = () => {
                 ))}
               </div>
               <blockquote className="text-lg text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                "WebCraft transformed our online presence completely. Our website now loads 3x faster 
-                and we've seen a 250% increase in conversions. Prashant's expertise is unmatched!"
+                WebCraft transformed our online presence completely. Our website now loads 3x faster 
+                and we have seen a 250% increase in conversions. Prashant expertise is unmatched!
               </blockquote>
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
@@ -580,7 +580,7 @@ const Contact = () => {
               Frequently Asked Questions
             </h3>
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Have questions? We've got answers to help you get started.
+              Have questions? We got answers to help you get started.
             </p>
           </div>
 
