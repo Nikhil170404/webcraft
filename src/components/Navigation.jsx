@@ -19,7 +19,7 @@ const Navigation = ({ darkMode, toggleDarkMode }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 10;
+      const isScrolled = window.scrollY > 20;
       setScrolled(isScrolled);
 
       // Update active section based on scroll position
@@ -28,7 +28,7 @@ const Navigation = ({ darkMode, toggleDarkMode }) => {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
+          return rect.top <= 120 && rect.bottom >= 120;
         }
         return false;
       });
@@ -45,7 +45,7 @@ const Navigation = ({ darkMode, toggleDarkMode }) => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const offset = 80; // Account for fixed navbar
+      const offset = 100; // Increased offset for better spacing
       const elementPosition = element.offsetTop - offset;
       
       window.scrollTo({
@@ -56,6 +56,20 @@ const Navigation = ({ darkMode, toggleDarkMode }) => {
     setIsOpen(false);
   };
 
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isOpen && !event.target.closest('.mobile-menu-container')) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
+
   return (
     <>
       <motion.nav
@@ -64,38 +78,38 @@ const Navigation = ({ darkMode, toggleDarkMode }) => {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg shadow-soft border-b border-gray-200/50 dark:border-gray-700/50'
+            ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl shadow-soft border-b border-gray-200/50 dark:border-gray-700/50'
             : 'bg-transparent'
         }`}
       >
         <div className="container-custom">
-          <div className="flex items-center justify-between h-16 lg:h-20">
+          <div className="flex items-center justify-between nav-height">
             {/* Logo */}
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center space-x-2 cursor-pointer"
+              className="flex items-center space-x-2 cursor-pointer z-50"
               onClick={() => scrollToSection('home')}
             >
               <div className="relative">
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                  className="w-10 h-10 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-xl flex items-center justify-center"
+                  className="w-9 sm:w-10 h-9 sm:h-10 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-xl flex items-center justify-center"
                 >
-                  <Code className="w-6 h-6 text-white" />
+                  <Code className="w-5 sm:w-6 h-5 sm:h-6 text-white" />
                 </motion.div>
                 <motion.div
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -top-1 -right-1 w-3 h-3 bg-secondary-500 rounded-full"
+                  className="absolute -top-1 -right-1 w-2.5 sm:w-3 h-2.5 sm:h-3 bg-secondary-500 rounded-full"
                 />
               </div>
               <div>
-                <h1 className="text-xl lg:text-2xl font-display font-bold text-gradient">
+                <h1 className="text-lg sm:text-xl lg:text-2xl font-display font-bold text-gradient">
                   WebCraft
                 </h1>
-                <p className="text-xs text-gray-600 dark:text-gray-400 -mt-1">
+                <p className="text-xs text-gray-600 dark:text-gray-400 -mt-1 hidden sm:block">
                   Digital Excellence
                 </p>
               </div>
@@ -112,7 +126,7 @@ const Navigation = ({ darkMode, toggleDarkMode }) => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     onClick={() => scrollToSection(item.id)}
-                    className={`nav-link px-4 py-2 rounded-lg transition-all duration-300 ${
+                    className={`nav-link px-3 py-2 rounded-lg transition-all duration-300 ${
                       activeSection === item.id
                         ? 'bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400'
                         : 'hover:bg-gray-100 dark:hover:bg-gray-800'
@@ -122,7 +136,7 @@ const Navigation = ({ darkMode, toggleDarkMode }) => {
                   >
                     <div className="flex items-center space-x-2">
                       <Icon className="w-4 h-4" />
-                      <span>{item.label}</span>
+                      <span className="text-sm font-medium">{item.label}</span>
                     </div>
                   </motion.button>
                 );
@@ -130,13 +144,14 @@ const Navigation = ({ darkMode, toggleDarkMode }) => {
             </div>
 
             {/* Right side controls */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2 sm:space-x-4">
               {/* Dark mode toggle */}
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={toggleDarkMode}
                 className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
               >
                 <AnimatePresence mode="wait">
                   {darkMode ? (
@@ -147,7 +162,7 @@ const Navigation = ({ darkMode, toggleDarkMode }) => {
                       exit={{ rotate: 90, opacity: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <Sun className="w-5 h-5" />
+                      <Sun className="w-4 sm:w-5 h-4 sm:h-5" />
                     </motion.div>
                   ) : (
                     <motion.div
@@ -157,7 +172,7 @@ const Navigation = ({ darkMode, toggleDarkMode }) => {
                       exit={{ rotate: -90, opacity: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <Moon className="w-5 h-5" />
+                      <Moon className="w-4 sm:w-5 h-4 sm:h-5" />
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -169,7 +184,7 @@ const Navigation = ({ darkMode, toggleDarkMode }) => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
                 onClick={() => scrollToSection('contact')}
-                className="hidden sm:block btn-primary"
+                className="hidden sm:block btn-primary px-4 py-2 text-sm"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -181,7 +196,8 @@ const Navigation = ({ darkMode, toggleDarkMode }) => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => setIsOpen(!isOpen)}
-                className="lg:hidden p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300"
+                className="lg:hidden p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 mobile-menu-container"
+                aria-label="Toggle menu"
               >
                 <AnimatePresence mode="wait">
                   {isOpen ? (
@@ -192,7 +208,7 @@ const Navigation = ({ darkMode, toggleDarkMode }) => {
                       exit={{ rotate: 90 }}
                       transition={{ duration: 0.2 }}
                     >
-                      <X className="w-6 h-6" />
+                      <X className="w-5 sm:w-6 h-5 sm:h-6" />
                     </motion.div>
                   ) : (
                     <motion.div
@@ -202,7 +218,7 @@ const Navigation = ({ darkMode, toggleDarkMode }) => {
                       exit={{ rotate: -90 }}
                       transition={{ duration: 0.2 }}
                     >
-                      <Menu className="w-6 h-6" />
+                      <Menu className="w-5 sm:w-6 h-5 sm:h-6" />
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -231,10 +247,11 @@ const Navigation = ({ darkMode, toggleDarkMode }) => {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'tween', duration: 0.3 }}
-              className="fixed top-0 right-0 h-full w-80 bg-white dark:bg-gray-900 shadow-2xl z-50 lg:hidden"
+              className="mobile-menu-container fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white dark:bg-gray-900 shadow-2xl z-50 lg:hidden"
             >
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-8">
+              <div className="p-4 sm:p-6 h-full flex flex-col">
+                {/* Header */}
+                <div className="flex items-center justify-between mb-8 pt-4">
                   <div className="flex items-center space-x-2">
                     <div className="w-8 h-8 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-lg flex items-center justify-center">
                       <Code className="w-5 h-5 text-white" />
@@ -247,12 +264,14 @@ const Navigation = ({ darkMode, toggleDarkMode }) => {
                     whileTap={{ scale: 0.9 }}
                     onClick={() => setIsOpen(false)}
                     className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+                    aria-label="Close menu"
                   >
                     <X className="w-6 h-6" />
                   </motion.button>
                 </div>
 
-                <nav className="space-y-2">
+                {/* Navigation */}
+                <nav className="space-y-2 flex-1">
                   {navItems.map((item, index) => {
                     const Icon = item.icon;
                     return (
@@ -279,21 +298,28 @@ const Navigation = ({ darkMode, toggleDarkMode }) => {
                   })}
                 </nav>
 
+                {/* CTA Section */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: 0.7 }}
-                  className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700"
+                  className="pt-6 border-t border-gray-200 dark:border-gray-700"
                 >
                   <button
                     onClick={() => {
                       scrollToSection('contact');
                       setIsOpen(false);
                     }}
-                    className="w-full btn-primary"
+                    className="w-full btn-primary py-3 text-base"
                   >
                     Get Started
                   </button>
+                  
+                  <div className="mt-4 text-center">
+                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                      Ready to transform your business?
+                    </p>
+                  </div>
                 </motion.div>
               </div>
             </motion.div>

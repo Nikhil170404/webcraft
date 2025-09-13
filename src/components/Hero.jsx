@@ -34,16 +34,16 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden gradient-bg">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden gradient-bg pt-20 lg:pt-24">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Large decorative shapes inspired by business card */}
+        {/* Large decorative shapes */}
         <motion.div
           style={{
             x: mousePosition.x,
             y: mousePosition.y,
           }}
-          className="absolute top-20 left-20 w-64 h-64 opacity-20"
+          className="absolute top-20 left-20 w-48 sm:w-64 h-48 sm:h-64 opacity-20"
         >
           <motion.div
             animate={{
@@ -59,13 +59,13 @@ const Hero = () => {
           />
         </motion.div>
 
-        {/* Star/burst shape like in business card */}
+        {/* Star/burst shape */}
         <motion.div
           style={{
             x: mousePosition.x * -0.5,
             y: mousePosition.y * -0.5,
           }}
-          className="absolute top-1/4 right-20 w-48 h-48"
+          className="absolute top-1/4 right-20 w-32 sm:w-48 h-32 sm:h-48"
         >
           <motion.div
             animate={{ rotate: [0, 360] }}
@@ -75,7 +75,7 @@ const Hero = () => {
             {[...Array(8)].map((_, i) => (
               <motion.div
                 key={i}
-                className="absolute top-1/2 left-1/2 w-2 h-16 bg-gradient-to-t from-primary-400 to-secondary-400 rounded-full opacity-30"
+                className="absolute top-1/2 left-1/2 w-1 sm:w-2 h-8 sm:h-16 bg-gradient-to-t from-primary-400 to-secondary-400 rounded-full opacity-30"
                 style={{
                   transformOrigin: '1px 0px',
                   transform: `translate(-50%, -100%) rotate(${i * 45}deg)`,
@@ -101,7 +101,7 @@ const Hero = () => {
             x: mousePosition.x * 0.3,
             y: mousePosition.y * 0.3,
           }}
-          className="absolute bottom-20 left-1/4 w-32 h-32 opacity-25"
+          className="absolute bottom-20 left-1/4 w-24 sm:w-32 h-24 sm:h-32 opacity-25"
         >
           <motion.div
             animate={{
@@ -125,7 +125,7 @@ const Hero = () => {
         {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-4 h-4 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-full opacity-40"
+            className="absolute w-2 sm:w-4 h-2 sm:h-4 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-full opacity-40"
             style={{
               top: `${20 + i * 15}%`,
               left: `${10 + i * 12}%`,
@@ -155,10 +155,10 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="inline-flex items-center px-4 py-2 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 shadow-soft mb-8"
+          className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 shadow-soft mb-6 sm:mb-8"
         >
           <Sparkles className="w-4 h-4 text-primary-600 mr-2" />
-          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+          <span className="text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300">
             AI-Enhanced Web Development
           </span>
           <motion.div
@@ -173,7 +173,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold mb-6 leading-tight"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold mb-4 sm:mb-6 leading-tight"
         >
           <span className="block">Build Your</span>
           <span className="block text-gradient">Digital Future</span>
@@ -185,7 +185,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-lg sm:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
+          className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed px-4"
         >
           We create{' '}
           <motion.span
@@ -204,7 +204,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12 px-4"
         >
           {[
             { icon: Zap, text: 'Lightning Fast', color: 'from-yellow-400 to-orange-500' },
@@ -218,10 +218,10 @@ const Hero = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
               whileHover={{ scale: 1.05, y: -2 }}
-              className="flex items-center px-4 py-2 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-full border border-gray-200/50 dark:border-gray-700/50 shadow-soft"
+              className="flex items-center px-3 sm:px-4 py-2 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-full border border-gray-200/50 dark:border-gray-700/50 shadow-soft"
             >
-              <feature.icon className={`w-4 h-4 mr-2 bg-gradient-to-r ${feature.color} bg-clip-text text-transparent`} />
-              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+              <feature.icon className={`w-3 sm:w-4 h-3 sm:h-4 mr-1 sm:mr-2 bg-gradient-to-r ${feature.color} bg-clip-text text-transparent`} />
+              <span className="text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300">
                 {feature.text}
               </span>
             </motion.div>
@@ -233,29 +233,29 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.9 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-12 sm:mb-16 px-4"
         >
           <motion.button
             onClick={() => scrollToSection('contact')}
-            className="btn-primary text-lg px-8 py-4 min-w-[200px]"
+            className="btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto min-w-[200px]"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="flex items-center">
+            <span className="flex items-center justify-center">
               Start Your Project
               <motion.div
                 animate={{ x: [0, 4, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
                 className="ml-2"
               >
-                <Rocket className="w-5 h-5" />
+                <Rocket className="w-4 sm:w-5 h-4 sm:h-5" />
               </motion.div>
             </span>
           </motion.button>
 
           <motion.button
             onClick={() => scrollToSection('portfolio')}
-            className="btn-outline text-lg px-8 py-4 min-w-[200px]"
+            className="btn-outline text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto min-w-[200px]"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -270,18 +270,18 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 1.2 }}
           className="flex flex-col items-center"
         >
-          <span className="text-sm text-gray-500 dark:text-gray-400 mb-2">
+          <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mb-2">
             Scroll to explore
           </span>
           <motion.button
             onClick={() => scrollToSection('about')}
-            animate={{ y: [0, 10, 0] }}
+            animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
             className="p-2 rounded-full hover:bg-white/20 dark:hover:bg-gray-800/20 transition-colors"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            <ChevronDown className="w-6 h-6 text-gray-500 dark:text-gray-400" />
+            <ChevronDown className="w-5 sm:w-6 h-5 sm:h-6 text-gray-500 dark:text-gray-400" />
           </motion.button>
         </motion.div>
       </motion.div>
@@ -291,11 +291,11 @@ const Hero = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.0 }}
-        className="absolute bottom-8 left-0 right-0 z-10"
+        className="absolute bottom-4 sm:bottom-8 left-0 right-0 z-10"
       >
         <div className="container-custom">
-          <div className="glass rounded-2xl p-6 mx-4">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+          <div className="glass rounded-xl sm:rounded-2xl p-4 sm:p-6 mx-4">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 text-center">
               {[
                 { number: '50+', label: 'Projects Completed' },
                 { number: '99%', label: 'Client Satisfaction' },
@@ -311,11 +311,11 @@ const Hero = () => {
                 >
                   <motion.div
                     whileHover={{ scale: 1.05 }}
-                    className="text-2xl lg:text-3xl font-display font-bold text-gradient mb-1"
+                    className="text-xl sm:text-2xl lg:text-3xl font-display font-bold text-gradient mb-1"
                   >
                     {stat.number}
                   </motion.div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                  <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                     {stat.label}
                   </div>
                 </motion.div>

@@ -82,22 +82,24 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      info: 'prashant@webcraft.com',
+      info: 'prashants1704@gmail.com',
       description: 'Send us an email anytime',
-      color: 'from-blue-500 to-cyan-500'
+      color: 'from-blue-500 to-cyan-500',
+      link: 'mailto:prashants1704@gmail.com'
     },
     {
       icon: Phone,
-      title: 'Call Us',
-      info: '+1 (555) 123-4567',
-      description: 'Mon-Fri from 8am to 5pm',
-      color: 'from-green-500 to-emerald-500'
+      title: 'Call/WhatsApp',
+      info: '+91 9987568422',
+      description: 'Available Mon-Sat 9am to 8pm',
+      color: 'from-green-500 to-emerald-500',
+      link: 'https://wa.me/919987568422'
     },
     {
       icon: MapPin,
       title: 'Visit Us',
-      info: 'San Francisco, CA',
-      description: 'Come say hello at our office',
+      info: 'Mumbai, Maharashtra',
+      description: 'India - Remote & On-site',
       color: 'from-purple-500 to-pink-500'
     },
     {
@@ -114,17 +116,19 @@ const Contact = () => {
     'Website Redesign',
     'E-commerce Store',
     'Mobile App',
+    'GST/Invoice Management System',
+    'Student Platform/EdTech',
     'SEO & Marketing',
     'Maintenance & Support',
     'Other'
   ];
 
   const budgetRanges = [
-    'Under $5,000',
-    '$5,000 - $10,000',
-    '$10,000 - $25,000',
-    '$25,000 - $50,000',
-    '$50,000+',
+    'Under ₹50,000',
+    '₹50,000 - ₹1,00,000',
+    '₹1,00,000 - ₹2,50,000',
+    '₹2,50,000 - ₹5,00,000',
+    '₹5,00,000+',
     'Let\'s Discuss'
   ];
 
@@ -210,7 +214,7 @@ const Contact = () => {
             variants={itemVariants}
             className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-gray-900 dark:text-white mb-6"
           >
-            Lets Build Something{' '}
+            Let Build Something{' '}
             <span className="text-gradient">Amazing Together</span>
           </motion.h2>
           
@@ -218,7 +222,7 @@ const Contact = () => {
             variants={itemVariants}
             className="text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
-            Ready to transform your digital presence? We will love to hear about your project 
+            Ready to transform your digital presence? We love to hear about your project 
             and discuss how we can help you achieve your business goals.
           </motion.p>
         </motion.div>
@@ -235,7 +239,8 @@ const Contact = () => {
               key={info.title}
               variants={itemVariants}
               whileHover={{ y: -5 }}
-              className="card card-hover text-center group"
+              className="card card-hover text-center group cursor-pointer"
+              onClick={() => info.link && window.open(info.link, '_blank')}
             >
               <div className={`w-16 h-16 bg-gradient-to-r ${info.color} rounded-xl mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                 <info.icon className="w-8 h-8 text-white" />
@@ -249,6 +254,11 @@ const Contact = () => {
               <p className="text-gray-600 dark:text-gray-400 text-sm">
                 {info.description}
               </p>
+              {info.link && (
+                <div className="mt-2 text-primary-600 dark:text-primary-400 text-sm font-medium">
+                  Click to connect
+                </div>
+              )}
             </motion.div>
           ))}
         </motion.div>
@@ -312,7 +322,7 @@ const Contact = () => {
                       value={formData.phone}
                       onChange={handleInputChange}
                       className="form-input"
-                      placeholder="+1 (555) 123-4567"
+                      placeholder="+91 9876543210"
                     />
                   </div>
                   <div>
@@ -399,7 +409,7 @@ const Contact = () => {
                     required
                     rows={6}
                     className="form-textarea"
-                    placeholder="Tell us about your project, goals, and any specific requirements..."
+                                          placeholder="Tell us about your project, goals, and any specific requirements..."
                   />
                 </div>
 
@@ -543,25 +553,27 @@ const Contact = () => {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="w-full btn-outline flex items-center justify-center"
+                  onClick={() => window.open('https://wa.me/919987568422', '_blank')}
+                >
+                  <Phone className="w-5 h-5 mr-2" />
+                  WhatsApp Now
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full btn-outline flex items-center justify-center"
+                  onClick={() => window.location.href = 'mailto:prashants1704@gmail.com'}
+                >
+                  <MessageSquare className="w-5 h-5 mr-2" />
+                  Send Email
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full btn-outline flex items-center justify-center"
                 >
                   <Calendar className="w-5 h-5 mr-2" />
                   Schedule a Call
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full btn-outline flex items-center justify-center"
-                >
-                  <MessageSquare className="w-5 h-5 mr-2" />
-                  Live Chat Support
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full btn-outline flex items-center justify-center"
-                >
-                  <ArrowRight className="w-5 h-5 mr-2" />
-                  View Pricing
                 </motion.button>
               </div>
             </motion.div>
@@ -580,7 +592,7 @@ const Contact = () => {
               Frequently Asked Questions
             </h3>
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Have questions? We got answers to help you get started.
+              Have questions? We have got answers to help you get started.
             </p>
           </div>
 

@@ -14,7 +14,11 @@ import {
   Award,
   ArrowRight,
   Play,
-  Filter
+  Filter,
+  FileText,
+  Video,
+  BookOpen,
+  Zap
 } from 'lucide-react';
 
 const Portfolio = () => {
@@ -28,169 +32,129 @@ const Portfolio = () => {
 
   const filters = [
     { id: 'all', label: 'All Projects', icon: Globe },
+    { id: 'business', label: 'Business Apps', icon: BarChart3 },
+    { id: 'education', label: 'Education', icon: BookOpen },
     { id: 'ecommerce', label: 'E-commerce', icon: ShoppingCart },
-    { id: 'business', label: 'Business', icon: BarChart3 },
     { id: 'portfolio', label: 'Portfolio', icon: Palette },
-    { id: 'mobile', label: 'Mobile App', icon: Smartphone },
   ];
 
   const projects = [
     {
       id: 1,
-      title: 'EcoStore - Sustainable E-commerce',
-      category: 'ecommerce',
-      image: '🌱',
-      description: 'Modern e-commerce platform for sustainable products with AI-powered recommendations.',
-      longDescription: 'A comprehensive e-commerce solution built for a sustainable products retailer. Features include advanced product filtering, AI-powered recommendations, eco-impact tracking, and seamless checkout experience.',
-      technologies: ['React', 'Next.js', 'Stripe', 'MongoDB', 'AI/ML'],
+      title: 'GST-SAAS - Smart Invoice Management',
+      category: 'business',
+      image: '📊',
+      description: 'AI-powered GST and invoice management system like Tally with automated calculations and smart reporting.',
+      longDescription: 'A comprehensive business management platform that combines GST compliance, invoice generation, and financial reporting with AI-powered insights. Features automated tax calculations, inventory management, and real-time business analytics to help small businesses manage their finances efficiently.',
+      technologies: ['React', 'Firebase', 'Node.js', 'AI/ML', 'Stripe API'],
       features: [
-        'Custom product catalog with advanced filtering',
-        'AI-powered product recommendations',
-        'Eco-impact calculator for products',
-        'Seamless Stripe payment integration',
-        'Inventory management system',
-        'Customer loyalty program'
+        'Automated GST calculations and filing',
+        'AI-powered expense categorization',
+        'Real-time inventory management',
+        'Smart invoice templates with customization',
+        'Financial reporting and analytics dashboard',
+        'Multi-business support with role-based access',
+        'Bank reconciliation and payment tracking',
+        'Tax compliance notifications and alerts'
       ],
       results: {
-        conversion: '+180%',
-        traffic: '+250%',
-        sales: '+300%',
-        speed: '1.2s load time'
+        businesses: '200+ businesses',
+        invoices: '50K+ invoices',
+        accuracy: '99.9% GST accuracy',
+        time_saved: '80% time reduction'
       },
       link: '#',
-      color: 'from-green-500 to-emerald-500',
-      bgColor: 'from-green-50 to-emerald-50'
+      github: '#',
+      color: 'from-emerald-500 to-blue-500',
+      bgColor: 'from-emerald-50 to-blue-50'
     },
     {
       id: 2,
-      title: 'TechCorp - Corporate Website',
-      category: 'business',
-      image: '🏢',
-      description: 'Professional corporate website with integrated CRM and lead generation system.',
-      longDescription: 'A sophisticated corporate website designed to establish market authority and generate qualified leads. Includes content management system, integrated CRM, and comprehensive analytics.',
-      technologies: ['React', 'TypeScript', 'Sanity CMS', 'HubSpot', 'Vercel'],
+      title: 'FousMate - Student Focus Platform',
+      category: 'education',
+      image: '🎯',
+      description: 'Smart platform connecting students with similar interests for focused study sessions via video calls and streak tracking.',
+      longDescription: 'An innovative educational platform that uses AI algorithms to match students with compatible study partners based on subjects, goals, and personality. Features video calling, focus time tracking, streak gamification, and collaborative learning tools to enhance student productivity.',
+      technologies: ['React', 'Firebase', 'WebRTC', 'ML Matching', 'Socket.io'],
       features: [
-        'Custom content management system',
-        'Lead generation forms with CRM integration',
-        'Interactive service showcases',
-        'Team directory with dynamic profiles',
-        'Case studies and testimonials system',
-        'Multi-language support'
+        'AI-powered student matching algorithm',
+        'HD video calling with screen sharing',
+        'Focus timer with Pomodoro technique',
+        'Streak tracking and gamification',
+        'Subject-wise study groups and rooms',
+        'Progress tracking and analytics',
+        'Achievement badges and leaderboards',
+        'Study material sharing and collaboration'
       ],
       results: {
-        leads: '+400%',
-        engagement: '+220%',
-        bounce: '-45%',
-        mobile: '98% score'
+        students: '5K+ active students',
+        sessions: '25K+ study sessions',
+        retention: '85% daily retention',
+        focus_time: '40% increased focus'
       },
       link: '#',
-      color: 'from-blue-500 to-cyan-500',
-      bgColor: 'from-blue-50 to-cyan-50'
-    },
-    {
-      id: 3,
-      title: 'ArtistSpace - Creative Portfolio',
-      category: 'portfolio',
-      image: '🎨',
-      description: 'Stunning portfolio website for digital artists with gallery management system.',
-      longDescription: 'A visually striking portfolio platform designed for digital artists to showcase their work. Features include dynamic galleries, client collaboration tools, and integrated e-commerce for art sales.',
-      technologies: ['React', 'Framer Motion', 'Cloudinary', 'Stripe', 'Netlify'],
-      features: [
-        'Dynamic image galleries with lightbox',
-        'Client collaboration portal',
-        'Commission request system',
-        'Art sales with print-on-demand',
-        'Social media integration',
-        'SEO-optimized artist profiles'
-      ],
-      results: {
-        inquiries: '+350%',
-        sales: '+280%',
-        followers: '+500%',
-        engagement: '+190%'
-      },
-      link: '#',
+      github: '#',
       color: 'from-purple-500 to-pink-500',
       bgColor: 'from-purple-50 to-pink-50'
     },
     {
-      id: 4,
-      title: 'FitTracker - Mobile Fitness App',
-      category: 'mobile',
-      image: '💪',
-      description: 'Cross-platform mobile app for fitness tracking with AI-powered coaching.',
-      longDescription: 'A comprehensive fitness tracking application with AI-powered personal coaching, social features, and integration with wearable devices. Built for both iOS and Android platforms.',
-      technologies: ['React Native', 'Firebase', 'TensorFlow', 'Redux', 'Expo'],
+      id: 3,
+      title: 'RiseUnderdog - eSports Tournament Platform',
+      category: 'ecommerce',
+      image: '🎮',
+      description: 'Complete eSports platform where players compete in tournaments, earn money, and engage with the gaming community.',
+      longDescription: 'A comprehensive eSports tournament platform built for competitive gaming. Players can join tournaments, track their performance, earn prize money, and connect with other gamers. Features real-time match tracking, payment processing, and community engagement tools.',
+      technologies: ['React', 'Firebase', 'Payment Gateway', 'Real-time DB', 'Node.js'],
       features: [
-        'AI-powered workout recommendations',
-        'Progress tracking and analytics',
-        'Social challenges and leaderboards',
-        'Wearable device integration',
-        'Nutrition tracking with barcode scanner',
-        'Offline workout support'
+        'Tournament creation and management system',
+        'Real-time match tracking and scoring',
+        'Secure payment processing for prizes',
+        'Player ranking and leaderboards',
+        'Community forums and chat system',
+        'Live streaming integration',
+        'Mobile-responsive gaming interface',
+        'Anti-cheat detection and reporting'
       ],
       results: {
-        downloads: '50K+',
-        retention: '85%',
-        rating: '4.8/5',
-        engagement: '90%'
+        tournaments: '500+ tournaments',
+        players: '10K+ registered players',
+        prize_money: '₹5L+ distributed',
+        engagement: '90% active users'
       },
       link: '#',
+      github: '#',
       color: 'from-orange-500 to-red-500',
       bgColor: 'from-orange-50 to-red-50'
     },
     {
-      id: 5,
-      title: 'LocalBiz - Restaurant Chain',
-      category: 'business',
-      image: '🍕',
-      description: 'Multi-location restaurant website with online ordering and delivery integration.',
-      longDescription: 'A comprehensive digital solution for a restaurant chain featuring location-based menus, online ordering, delivery integration, and customer loyalty program.',
-      technologies: ['Next.js', 'Supabase', 'Mapbox', 'Stripe', 'Twilio'],
+      id: 4,
+      title: 'BetSet365 - Sports Betting Platform',
+      category: 'ecommerce',
+      image: '⚽',
+      description: 'Full-stack sports betting platform with real-time odds, live match tracking, and secure payment processing.',
+      longDescription: 'A sophisticated sports betting platform offering real-time odds calculation, live match tracking, and comprehensive betting management. Built with security as a priority, featuring fraud detection, responsible gambling tools, and seamless user experience.',
+      technologies: ['React', 'Firebase', 'Real-time API', 'Payment Security', 'Analytics'],
       features: [
-        'Location-based menu management',
-        'Online ordering with delivery tracking',
-        'Table reservation system',
-        'Customer loyalty program',
-        'Multi-location management',
-        'Real-time order notifications'
+        'Real-time sports odds and betting',
+        'Live match tracking and updates',
+        'Secure wallet and payment system',
+        'Responsible gambling controls',
+        'Multi-sport betting support',
+        'Advanced analytics and insights',
+        'Mobile-first responsive design',
+        'KYC verification and compliance'
       ],
       results: {
-        orders: '+320%',
-        revenue: '+280%',
-        reviews: '4.9/5',
-        retention: '+150%'
+        bets_placed: '100K+ bets placed',
+        users: '8K+ verified users',
+        uptime: '99.9% platform uptime',
+        processing: '2-sec bet processing'
       },
       link: '#',
-      color: 'from-yellow-500 to-orange-500',
-      bgColor: 'from-yellow-50 to-orange-50'
-    },
-    {
-      id: 6,
-      title: 'HealthCare+ - Medical Platform',
-      category: 'business',
-      image: '🏥',
-      description: 'HIPAA-compliant medical platform with telemedicine and patient management.',
-      longDescription: 'A secure healthcare platform enabling telemedicine consultations, patient management, and medical record keeping. Built with strict HIPAA compliance and security measures.',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'WebRTC', 'AWS'],
-      features: [
-        'HIPAA-compliant video consultations',
-        'Electronic health records (EHR)',
-        'Appointment scheduling system',
-        'Prescription management',
-        'Patient portal with secure messaging',
-        'Insurance verification system'
-      ],
-      results: {
-        consultations: '10K+',
-        satisfaction: '96%',
-        efficiency: '+200%',
-        security: '100% compliant'
-      },
-      link: '#',
-      color: 'from-teal-500 to-green-500',
-      bgColor: 'from-teal-50 to-green-50'
-    },
+      github: '#',
+      color: 'from-green-500 to-teal-500',
+      bgColor: 'from-green-50 to-teal-50'
+    }
   ];
 
   const filteredProjects = activeFilter === 'all' 
@@ -265,8 +229,8 @@ const Portfolio = () => {
             variants={itemVariants}
             className="text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
-            Take a look at some of our recent work and see how we helped businesses 
-            transform their digital presence and achieve remarkable growth.
+            Take a look at our latest projects built with React and Firebase, 
+            showcasing innovative solutions that solve real-world problems and deliver exceptional user experiences.
           </motion.p>
         </motion.div>
 
@@ -303,7 +267,7 @@ const Portfolio = () => {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
+            className="grid md:grid-cols-2 gap-8 mb-16"
           >
             {filteredProjects.map((project, _index) => (
               <motion.div
@@ -336,7 +300,10 @@ const Portfolio = () => {
                     <span className={`px-3 py-1 text-xs font-medium rounded-full bg-gradient-to-r ${project.color} text-white`}>
                       {filters.find(f => f.id === project.category)?.label}
                     </span>
-                    <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-primary-600 transition-colors" />
+                    <div className="flex items-center gap-2">
+                      <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-primary-600 transition-colors" />
+                      <Code className="w-4 h-4 text-gray-400 group-hover:text-primary-600 transition-colors" />
+                    </div>
                   </div>
 
                   <h3 className="text-xl font-display font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
@@ -363,6 +330,18 @@ const Portfolio = () => {
                     )}
                   </div>
 
+                  {/* Project Stats */}
+                  <div className="grid grid-cols-2 gap-3 mb-4">
+                    {Object.entries(project.results).slice(0, 2).map(([key, value]) => (
+                      <div key={key} className="text-center p-2 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                        <div className="text-sm font-bold text-primary-600 dark:text-primary-400">{value}</div>
+                        <div className="text-xs text-gray-600 dark:text-gray-400 capitalize">
+                          {key.replace('_', ' ')}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
                   <motion.div
                     whileHover={{ x: 5 }}
                     className="flex items-center text-primary-600 dark:text-primary-400 font-medium"
@@ -375,6 +354,44 @@ const Portfolio = () => {
             ))}
           </motion.div>
         </AnimatePresence>
+
+        {/* Tech Stack Section */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          className="mb-16"
+        >
+          <motion.div variants={itemVariants} className="text-center mb-8">
+            <h3 className="text-2xl lg:text-3xl font-display font-bold text-gray-900 dark:text-white mb-4">
+              Built with Modern Technologies
+            </h3>
+            <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              All projects are built using cutting-edge technologies for optimal performance and scalability.
+            </p>
+          </motion.div>
+
+          <motion.div variants={itemVariants} className="card p-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { name: 'React', icon: '⚛️', desc: 'Modern UI Library' },
+                { name: 'Firebase', icon: '🔥', desc: 'Backend & Database' },
+                { name: 'Node.js', icon: '🟢', desc: 'Server Runtime' },
+                { name: 'AI/ML', icon: '🤖', desc: 'Smart Features' },
+              ].map((tech, _index) => (
+                <motion.div
+                  key={tech.name}
+                  whileHover={{ scale: 1.05 }}
+                  className="text-center p-4 rounded-xl bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                >
+                  <div className="text-3xl mb-2">{tech.icon}</div>
+                  <h4 className="font-bold text-gray-900 dark:text-white mb-1">{tech.name}</h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">{tech.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </motion.div>
 
         {/* Stats Section */}
         <motion.div
@@ -389,16 +406,16 @@ const Portfolio = () => {
                 Results That Speak for Themselves
               </h3>
               <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Here what our clients achieve when they work with WebCraft.
+                Here what our projects have achieved across different industries and use cases.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
-                { number: '50+', label: 'Projects Completed', icon: Code },
-                { number: '300%', label: 'Average ROI Increase', icon: BarChart3 },
-                { number: '99%', label: 'Client Satisfaction', icon: Users },
-                { number: '2x', label: 'Faster Than Competition', icon: Globe },
+                { number: '4+', label: 'Major Projects Completed', icon: Code },
+                { number: '25K+', label: 'Active Users Across Platforms', icon: Users },
+                { number: '99%', label: 'Client Satisfaction Rate', icon: Award },
+                { number: '80%', label: 'Average Performance Improvement', icon: Zap },
               ].map((stat, _index) => (
                 <motion.div
                   key={stat.label}
@@ -429,16 +446,17 @@ const Portfolio = () => {
         >
           <div className="glass rounded-2xl p-8 lg:p-12">
             <h3 className="text-2xl lg:text-3xl font-display font-bold text-gray-900 dark:text-white mb-4">
-              Ready to Join Our Success Stories?
+              Ready to Build Your Next Big Project?
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Let create something amazing together. Your project could be our next case study.
+              Let create something amazing together. Your project could be our next success story.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="btn-primary text-lg px-8 py-4"
+                onClick={() => window.open('https://wa.me/919987568422', '_blank')}
               >
                 Start Your Project
               </motion.button>
@@ -446,8 +464,9 @@ const Portfolio = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="btn-outline text-lg px-8 py-4"
+                onClick={() => window.location.href = 'mailto:prashants1704@gmail.com'}
               >
-                View All Work
+                Discuss Ideas
               </motion.button>
             </div>
           </div>
@@ -495,15 +514,36 @@ const Portfolio = () => {
                     </div>
 
                     <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-4">
-                      Key Results:
+                      Project Results:
                     </h4>
                     <div className="grid grid-cols-2 gap-4 mb-6">
                       {Object.entries(selectedProject.results).map(([key, value]) => (
                         <div key={key} className="text-center p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
                           <div className="text-lg font-bold text-gradient">{value}</div>
-                          <div className="text-sm text-gray-600 dark:text-gray-400 capitalize">{key}</div>
+                          <div className="text-sm text-gray-600 dark:text-gray-400 capitalize">
+                            {key.replace('_', ' ')}
+                          </div>
                         </div>
                       ))}
+                    </div>
+
+                    <div className="flex gap-4">
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="btn-primary flex-1"
+                      >
+                        <ExternalLink className="w-5 h-5 mr-2" />
+                        Live Demo
+                      </motion.button>
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="btn-outline flex-1"
+                      >
+                        <Code className="w-5 h-5 mr-2" />
+                        View Code
+                      </motion.button>
                     </div>
                   </div>
 
@@ -531,21 +571,12 @@ const Portfolio = () => {
                     </h4>
                     <ul className="space-y-2 mb-6">
                       {selectedProject.features.map((feature, _index) => (
-                        <li key={feature} className="flex items-center text-gray-600 dark:text-gray-300">
-                          <div className="w-2 h-2 bg-primary-600 rounded-full mr-3" />
+                        <li key={feature} className="flex items-start text-gray-600 dark:text-gray-300">
+                          <div className="w-2 h-2 bg-primary-600 rounded-full mr-3 mt-2 flex-shrink-0" />
                           {feature}
                         </li>
                       ))}
                     </ul>
-
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="btn-primary w-full"
-                    >
-                      <ExternalLink className="w-5 h-5 mr-2" />
-                      View Live Project
-                    </motion.button>
                   </div>
                 </div>
               </div>

@@ -71,7 +71,7 @@
   }
 
   .card {
-    @apply bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-soft dark:shadow-none;
+    @apply bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-soft dark:shadow-none;
     @apply hover:shadow-medium dark:hover:shadow-xl transition-all duration-300;
     @apply border border-gray-100 dark:border-gray-700;
   }
@@ -82,7 +82,11 @@
   }
 
   .section-padding {
-    @apply py-12 sm:py-16 lg:py-20 xl:py-24;
+    @apply py-16 sm:py-20 lg:py-24 xl:py-28;
+  }
+
+  .section-spacing {
+    @apply mb-12 sm:mb-16 lg:mb-20 xl:mb-24;
   }
 
   .container-custom {
@@ -158,6 +162,51 @@
     @apply border border-white/20 dark:border-gray-700/30;
     @apply shadow-soft dark:shadow-xl;
   }
+
+  /* Header spacing adjustments */
+  .header-spacing {
+    @apply mb-8 sm:mb-12 lg:mb-16;
+  }
+
+  /* Content spacing improvements */
+  .content-spacing {
+    @apply space-y-6 sm:space-y-8 lg:space-y-12;
+  }
+
+  /* Grid spacing improvements */
+  .grid-spacing {
+    @apply gap-4 sm:gap-6 lg:gap-8;
+  }
+
+  .grid-spacing-lg {
+    @apply gap-6 sm:gap-8 lg:gap-12;
+  }
+
+  /* Text responsive improvements */
+  .text-hero {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl;
+    @apply leading-tight tracking-tight;
+  }
+
+  .text-section-title {
+    @apply text-2xl sm:text-3xl lg:text-4xl xl:text-5xl;
+    @apply leading-tight;
+  }
+
+  .text-card-title {
+    @apply text-lg sm:text-xl lg:text-2xl;
+    @apply leading-tight;
+  }
+
+  .text-body {
+    @apply text-sm sm:text-base lg:text-lg;
+    @apply leading-relaxed;
+  }
+
+  .text-body-lg {
+    @apply text-base sm:text-lg lg:text-xl;
+    @apply leading-relaxed;
+  }
 }
 
 @layer utilities {
@@ -185,54 +234,102 @@
     transform: translateZ(40px);
   }
 
-  /* Responsive text utilities */
-  .text-responsive-xs {
-    @apply text-xs sm:text-sm;
-  }
-
-  .text-responsive-sm {
-    @apply text-sm sm:text-base;
-  }
-
-  .text-responsive-base {
-    @apply text-base sm:text-lg;
-  }
-
-  .text-responsive-lg {
-    @apply text-lg sm:text-xl lg:text-2xl;
-  }
-
-  .text-responsive-xl {
-    @apply text-xl sm:text-2xl lg:text-3xl;
-  }
-
-  .text-responsive-2xl {
-    @apply text-2xl sm:text-3xl lg:text-4xl xl:text-5xl;
-  }
-
-  .text-responsive-3xl {
-    @apply text-3xl sm:text-4xl lg:text-5xl xl:text-6xl;
-  }
-
-  /* Responsive spacing utilities */
-  .gap-responsive {
-    @apply gap-4 sm:gap-6 lg:gap-8;
-  }
-
-  .gap-responsive-sm {
-    @apply gap-2 sm:gap-4 lg:gap-6;
-  }
-
-  .gap-responsive-lg {
-    @apply gap-6 sm:gap-8 lg:gap-12;
-  }
-
+  /* Enhanced responsive spacing utilities */
   .p-responsive {
-    @apply p-4 sm:p-6 lg:p-8;
+    @apply p-4 sm:p-6 lg:p-8 xl:p-10;
   }
 
   .p-responsive-lg {
-    @apply p-6 sm:p-8 lg:p-12;
+    @apply p-6 sm:p-8 lg:p-12 xl:p-16;
+  }
+
+  .px-responsive {
+    @apply px-4 sm:px-6 lg:px-8 xl:px-10;
+  }
+
+  .py-responsive {
+    @apply py-4 sm:py-6 lg:py-8 xl:py-10;
+  }
+
+  .py-responsive-lg {
+    @apply py-8 sm:py-12 lg:py-16 xl:py-20;
+  }
+
+  .m-responsive {
+    @apply m-4 sm:m-6 lg:m-8 xl:m-10;
+  }
+
+  .mb-responsive {
+    @apply mb-4 sm:mb-6 lg:mb-8 xl:mb-10;
+  }
+
+  .mb-responsive-lg {
+    @apply mb-8 sm:mb-12 lg:mb-16 xl:mb-20;
+  }
+
+  .mt-responsive {
+    @apply mt-4 sm:mt-6 lg:mt-8 xl:mt-10;
+  }
+
+  .mt-responsive-lg {
+    @apply mt-8 sm:mt-12 lg:mt-16 xl:mt-20;
+  }
+
+  /* Enhanced gap utilities */
+  .gap-responsive {
+    @apply gap-4 sm:gap-6 lg:gap-8 xl:gap-10;
+  }
+
+  .gap-responsive-sm {
+    @apply gap-2 sm:gap-4 lg:gap-6 xl:gap-8;
+  }
+
+  .gap-responsive-lg {
+    @apply gap-6 sm:gap-8 lg:gap-12 xl:gap-16;
+  }
+
+  /* Better width constraints */
+  .w-responsive {
+    @apply w-full sm:w-auto;
+  }
+
+  .max-w-responsive {
+    @apply max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl;
+  }
+
+  .max-w-responsive-lg {
+    @apply max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl;
+  }
+
+  .max-w-responsive-xl {
+    @apply max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl;
+  }
+
+  /* Navigation specific utilities */
+  .nav-height {
+    @apply h-16 lg:h-20;
+  }
+
+  .nav-offset {
+    @apply pt-16 lg:pt-20;
+  }
+
+  .nav-offset-lg {
+    @apply pt-20 lg:pt-24;
+  }
+
+  /* Hero specific utilities */
+  .hero-spacing {
+    @apply pt-20 sm:pt-24 lg:pt-28 xl:pt-32;
+  }
+
+  /* Button responsive utilities */
+  .btn-responsive {
+    @apply w-full sm:w-auto min-w-[160px] sm:min-w-[180px] lg:min-w-[200px];
+  }
+
+  .btn-responsive-lg {
+    @apply w-full sm:w-auto min-w-[180px] sm:min-w-[200px] lg:min-w-[220px];
   }
 }
 
@@ -275,6 +372,111 @@
   background: linear-gradient(90deg, #374151 25%, #4b5563 37%, #374151 63%);
 }
 
+/* Enhanced mobile optimizations */
+@media (max-width: 640px) {
+  .container-custom {
+    @apply px-3;
+  }
+  
+  .section-padding {
+    @apply py-12;
+  }
+  
+  .card {
+    @apply p-4 rounded-xl;
+  }
+  
+  .btn-primary,
+  .btn-secondary,
+  .btn-outline {
+    @apply px-4 py-3 text-sm;
+  }
+  
+  .text-hero {
+    @apply text-2xl leading-tight;
+  }
+  
+  .text-section-title {
+    @apply text-xl;
+  }
+  
+  .text-card-title {
+    @apply text-lg;
+  }
+  
+  .text-body,
+  .text-body-lg {
+    @apply text-sm;
+  }
+  
+  /* Improved touch targets for mobile */
+  button,
+  a {
+    @apply min-h-[44px] min-w-[44px];
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .container-custom {
+    @apply px-6;
+  }
+  
+  .section-padding {
+    @apply py-16;
+  }
+  
+  .card {
+    @apply p-6;
+  }
+  
+  .text-hero {
+    @apply text-4xl;
+  }
+  
+  .text-section-title {
+    @apply text-3xl;
+  }
+}
+
+/* Desktop optimizations */
+@media (min-width: 1025px) {
+  .container-custom {
+    @apply px-8;
+  }
+  
+  .section-padding {
+    @apply py-24;
+  }
+  
+  .card {
+    @apply p-8;
+  }
+  
+  .text-hero {
+    @apply text-6xl;
+  }
+  
+  .text-section-title {
+    @apply text-5xl;
+  }
+}
+
+/* Large desktop optimizations */
+@media (min-width: 1281px) {
+  .section-padding {
+    @apply py-28;
+  }
+  
+  .card {
+    @apply p-10;
+  }
+  
+  .text-hero {
+    @apply text-7xl;
+  }
+}
+
 /* Smooth animations for page load */
 .page-enter {
   opacity: 0;
@@ -287,7 +489,7 @@
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-/* Custom focus styles */
+/* Enhanced focus styles */
 .focus-visible:focus {
   @apply outline-none ring-2 ring-primary-500 dark:ring-primary-400 ring-offset-2 dark:ring-offset-gray-900;
 }
@@ -327,20 +529,5 @@
   .btn-secondary,
   .btn-outline {
     -webkit-tap-highlight-color: transparent;
-  }
-}
-
-/* Mobile-specific improvements */
-@media (max-width: 640px) {
-  .container-custom {
-    @apply px-3;
-  }
-  
-  .section-padding {
-    @apply py-8;
-  }
-  
-  .card {
-    @apply p-3;
   }
 }

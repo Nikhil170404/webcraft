@@ -99,22 +99,22 @@ function App() {
           {/* Animated background shapes */}
           <motion.div
             animate={{
-              x: [0, 80, 0],
-              y: [0, -40, 0],
-              scale: [1, 1.2, 1],
+              x: [0, 60, 0],
+              y: [0, -30, 0],
+              scale: [1, 1.1, 1],
             }}
             transition={{
               duration: 20,
               repeat: Infinity,
               ease: "easeInOut"
             }}
-            className="absolute top-10 left-10 w-24 sm:w-32 h-24 sm:h-32 bg-gradient-to-r from-primary-400/20 to-secondary-400/20 rounded-full blur-xl"
+            className="absolute top-10 left-10 w-20 sm:w-24 md:w-32 h-20 sm:h-24 md:h-32 bg-gradient-to-r from-primary-400/20 to-secondary-400/20 rounded-full blur-xl"
           />
           <motion.div
             animate={{
-              x: [0, -60, 0],
-              y: [0, 50, 0],
-              scale: [1, 0.8, 1],
+              x: [0, -50, 0],
+              y: [0, 40, 0],
+              scale: [1, 0.9, 1],
             }}
             transition={{
               duration: 15,
@@ -122,13 +122,13 @@ function App() {
               ease: "easeInOut",
               delay: 2
             }}
-            className="absolute top-1/3 right-20 w-36 sm:w-48 h-36 sm:h-48 bg-gradient-to-r from-secondary-400/15 to-primary-400/15 rounded-full blur-xl"
+            className="absolute top-1/3 right-20 w-28 sm:w-36 md:w-48 h-28 sm:h-36 md:h-48 bg-gradient-to-r from-secondary-400/15 to-primary-400/15 rounded-full blur-xl"
           />
           <motion.div
             animate={{
-              x: [0, 40, 0],
-              y: [0, -25, 0],
-              scale: [1, 1.1, 1],
+              x: [0, 30, 0],
+              y: [0, -20, 0],
+              scale: [1, 1.05, 1],
             }}
             transition={{
               duration: 25,
@@ -136,7 +136,7 @@ function App() {
               ease: "easeInOut",
               delay: 5
             }}
-            className="absolute bottom-1/4 left-1/4 w-28 sm:w-40 h-28 sm:h-40 bg-gradient-to-r from-primary-300/10 to-secondary-300/10 rounded-full blur-xl"
+            className="absolute bottom-1/4 left-1/4 w-24 sm:w-28 md:w-40 h-24 sm:h-28 md:h-40 bg-gradient-to-r from-primary-300/10 to-secondary-300/10 rounded-full blur-xl"
           />
         </div>
 
@@ -145,27 +145,27 @@ function App() {
 
         {/* Main Content */}
         <main className="relative">
-          <section id="home">
+          <section id="home" className="relative">
             <Hero />
           </section>
           
-          <section id="about">
+          <section id="about" className="relative">
             <About />
           </section>
           
-          <section id="services">
+          <section id="services" className="relative">
             <Services />
           </section>
           
-          <section id="features">
+          <section id="features" className="relative">
             <Features />
           </section>
           
-          <section id="portfolio">
+          <section id="portfolio" className="relative">
             <Portfolio />
           </section>
           
-          <section id="contact">
+          <section id="contact" className="relative">
             <Contact />
           </section>
         </main>
@@ -186,7 +186,7 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
+      if (window.pageYOffset > 400) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
@@ -212,9 +212,10 @@ const ScrollToTop = () => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0 }}
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-50 p-3 bg-primary-600 dark:bg-primary-500 text-white rounded-full shadow-large hover:bg-primary-700 dark:hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-all duration-300 hover:scale-110"
+          className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-50 p-3 sm:p-4 bg-primary-600 dark:bg-primary-500 text-white rounded-full shadow-large hover:bg-primary-700 dark:hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-all duration-300 hover:scale-110"
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.95 }}
+          aria-label="Scroll to top"
         >
           <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
@@ -228,9 +229,10 @@ const ScrollToTop = () => {
 // Footer Component
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 dark:bg-gray-950 text-white py-8 sm:py-12">
+    <footer className="bg-gray-900 dark:bg-gray-950 text-white py-12 sm:py-16 lg:py-20">
       <div className="container-custom">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          {/* Brand Section */}
           <div className="col-span-1 sm:col-span-2">
             <motion.h3
               initial={{ opacity: 0, y: 20 }}
@@ -248,7 +250,9 @@ const Footer = () => {
               viewport={{ once: true }}
               className="text-gray-300 mb-6 max-w-md text-sm sm:text-base leading-relaxed"
             >
-              Creating exceptional digital experiences for small businesses with AI-enhanced, fast, and optimized websites at fair prices.
+              Creating exceptional digital experiences for small businesses with AI-enhanced, 
+              fast, and optimized websites at fair prices. Transform your business with 
+              cutting-edge web solutions.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -258,16 +262,35 @@ const Footer = () => {
               className="flex space-x-4"
             >
               {/* Social media links would go here */}
+              <div className="flex space-x-4">
+                {[
+                  { name: 'LinkedIn', icon: '💼' },
+                  { name: 'Twitter', icon: '🐦' },
+                  { name: 'GitHub', icon: '💻' },
+                ].map((social) => (
+                  <motion.a
+                    key={social.name}
+                    href="#"
+                    className="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-lg flex items-center justify-center transition-colors duration-300"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    aria-label={social.name}
+                  >
+                    <span className="text-lg">{social.icon}</span>
+                  </motion.a>
+                ))}
+              </div>
             </motion.div>
           </div>
 
+          {/* Quick Links */}
           <div>
             <motion.h4
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              className="text-base sm:text-lg font-semibold mb-4"
+              className="text-base sm:text-lg font-semibold mb-4 sm:mb-6"
             >
               Quick Links
             </motion.h4>
@@ -276,23 +299,35 @@ const Footer = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
-              className="space-y-2"
+              className="space-y-3"
             >
-              <li><a href="#home" className="text-gray-300 hover:text-primary-400 transition-colors text-sm">Home</a></li>
-              <li><a href="#about" className="text-gray-300 hover:text-primary-400 transition-colors text-sm">About</a></li>
-              <li><a href="#services" className="text-gray-300 hover:text-primary-400 transition-colors text-sm">Services</a></li>
-              <li><a href="#portfolio" className="text-gray-300 hover:text-primary-400 transition-colors text-sm">Portfolio</a></li>
-              <li><a href="#contact" className="text-gray-300 hover:text-primary-400 transition-colors text-sm">Contact</a></li>
+              {[
+                { label: 'Home', href: '#home' },
+                { label: 'About', href: '#about' },
+                { label: 'Services', href: '#services' },
+                { label: 'Portfolio', href: '#portfolio' },
+                { label: 'Contact', href: '#contact' },
+              ].map((link) => (
+                <li key={link.label}>
+                  <a 
+                    href={link.href} 
+                    className="text-gray-300 hover:text-primary-400 transition-colors text-sm sm:text-base block py-1"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </motion.ul>
           </div>
 
+          {/* Contact Info */}
           <div>
             <motion.h4
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
               viewport={{ once: true }}
-              className="text-base sm:text-lg font-semibold mb-4"
+              className="text-base sm:text-lg font-semibold mb-4 sm:mb-6"
             >
               Contact Info
             </motion.h4>
@@ -301,23 +336,52 @@ const Footer = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
-              className="space-y-2 text-gray-300"
+              className="space-y-3 text-gray-300"
             >
-              <p className="text-sm">Prashant</p>
-              <p className="text-sm">Founder & Web Developer</p>
-              <p className="text-sm">prashant@webcraft.com</p>
+              <div className="space-y-2">
+                <p className="text-sm sm:text-base font-medium">Prashant</p>
+                <p className="text-sm text-gray-400">Founder & Web Developer</p>
+                <p className="text-sm sm:text-base">prashant@webcraft.com</p>
+                <p className="text-sm sm:text-base">+1 (555) 123-4567</p>
+              </div>
+              
+              <div className="pt-4">
+                <p className="text-xs sm:text-sm text-gray-400">
+                  Available Monday - Friday<br />
+                  9:00 AM - 6:00 PM PST
+                </p>
+              </div>
             </motion.div>
           </div>
         </div>
 
+        {/* Bottom Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
           viewport={{ once: true }}
-          className="border-t border-gray-800 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center text-gray-400"
+          className="border-t border-gray-800 mt-8 sm:mt-12 pt-6 sm:pt-8"
         >
-          <p className="text-xs sm:text-sm">&copy; 2025 WebCraft. All rights reserved. Built with React & Tailwind CSS.</p>
+          <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+            <div className="text-center sm:text-left">
+              <p className="text-xs sm:text-sm text-gray-400">
+                &copy; 2025 WebCraft. All rights reserved.
+              </p>
+              <p className="text-xs text-gray-500 mt-1">
+                Built with React & Tailwind CSS. Powered by AI.
+              </p>
+            </div>
+            
+            <div className="flex space-x-6 text-xs sm:text-sm">
+              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">
+                Privacy Policy
+              </a>
+              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">
+                Terms of Service
+              </a>
+            </div>
+          </div>
         </motion.div>
       </div>
     </footer>
