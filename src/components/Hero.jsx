@@ -159,7 +159,7 @@ const Hero = () => {
         >
           <Sparkles className="w-4 h-4 text-primary-600 mr-2" />
           <span className="text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300">
-            AI-Enhanced Web Development
+            New & Innovative Web Development
           </span>
           <motion.div
             animate={{ scale: [1, 1.2, 1] }}
@@ -175,9 +175,9 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold mb-4 sm:mb-6 leading-tight"
         >
-          <span className="block">Transform Your Business with</span>
-          <span className="block text-gradient">AI-Enhanced Websites</span>
-          <span className="block">that are Fast, Beautiful, and Results-Driven</span>
+          <span className="block">Fresh Innovation Meets</span>
+          <span className="block text-gradient">Professional Results</span>
+          <span className="block">for Modern Businesses</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -187,15 +187,15 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed px-4"
         >
-          Professional Web Development Services for{' '}
+          We are a new web development company bringing{' '}
           <motion.span
             animate={{ color: ['#2563eb', '#dc2626', '#2563eb'] }}
             transition={{ duration: 3, repeat: Infinity }}
             className="font-semibold"
           >
-            Small Businesses
+            Fresh Perspectives
           </motion.span>{' '}
-          starting at just ₹15,000. Get 100% satisfaction guarantee with fast delivery in 2-4 weeks.
+          and modern technology to help small businesses succeed online. Starting at just ₹15,000 with 100% satisfaction guarantee.
         </motion.p>
 
         {/* Feature Pills */}
@@ -206,10 +206,10 @@ const Hero = () => {
           className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12 px-4"
         >
           {[
-            { icon: Zap, text: '2-4 Weeks Delivery', color: 'from-yellow-400 to-orange-500' },
-            { icon: Code2, text: 'React + Firebase', color: 'from-blue-400 to-purple-500' },
-            { icon: Palette, text: '100% Satisfaction', color: 'from-pink-400 to-red-500' },
-            { icon: Rocket, text: '24/7 Support', color: 'from-green-400 to-blue-500' },
+            { icon: Zap, text: 'New & Motivated', color: 'from-yellow-400 to-orange-500' },
+            { icon: Code2, text: 'Modern Tech Stack', color: 'from-blue-400 to-purple-500' },
+            { icon: Palette, text: 'Fresh Designs', color: 'from-pink-400 to-red-500' },
+            { icon: Rocket, text: 'Proven Results', color: 'from-green-400 to-blue-500' },
           ].map((feature, index) => (
             <motion.div
               key={feature.text}
@@ -241,7 +241,7 @@ const Hero = () => {
             whileTap={{ scale: 0.95 }}
           >
             <span className="flex items-center justify-center">
-              Start Your Project
+              Start Your Journey
               <motion.div
                 animate={{ x: [0, 4, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
@@ -258,7 +258,7 @@ const Hero = () => {
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
-            View Our Work
+            See Live Projects
           </motion.button>
         </motion.div>
 
@@ -270,7 +270,7 @@ const Hero = () => {
           className="flex flex-col items-center"
         >
           <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mb-2">
-            Scroll to explore
+            Scroll to explore our work
           </span>
           <motion.button
             onClick={() => scrollToSection('about')}
@@ -296,10 +296,10 @@ const Hero = () => {
           <div className="glass rounded-xl sm:rounded-2xl p-4 sm:p-6 mx-4">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 text-center">
               {[
-                { number: '15+', label: 'Projects Completed' },
+                { number: '10+', label: 'Live Projects' },
                 { number: '100%', label: 'Client Satisfaction' },
-                { number: '24/7', label: 'Support Available' },
-                { number: '2-4', label: 'Weeks Delivery' },
+                { number: '2025', label: 'Fresh Start' },
+                { number: '24/7', label: 'Dedicated Support' },
               ].map((stat, index) => (
                 <motion.div
                   key={stat.label}

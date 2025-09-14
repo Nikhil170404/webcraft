@@ -227,6 +227,7 @@ const ScrollToTop = () => {
 };
 
 // Footer Component with Updated Contact Information
+// Footer Component with Updated Contact Information for New Company
 const Footer = () => {
   return (
     <footer className="bg-gray-900 dark:bg-gray-950 text-white py-12 sm:py-16 lg:py-20">
@@ -250,8 +251,8 @@ const Footer = () => {
               viewport={{ once: true }}
               className="text-gray-300 mb-6 max-w-md text-sm sm:text-base leading-relaxed"
             >
-              Transform Your Business with AI-Enhanced Websites that are Fast, Beautiful, and Results-Driven. 
-              Professional web development services starting at just ₹15,000 with 100% satisfaction guarantee.
+              A fresh, innovative web development company bringing modern technology and creative solutions 
+              to help small businesses thrive online. Professional results with a personal touch, starting at just ₹15,000.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -318,7 +319,7 @@ const Footer = () => {
                 { label: 'Starter Package - ₹15,000', href: '#services' },
                 { label: 'Professional Package - ₹25,000', href: '#services' },
                 { label: 'Enterprise Package - ₹40,000', href: '#services' },
-                { label: 'SEO & Marketing', href: '#services' },
+                { label: 'SEO & Digital Marketing', href: '#services' },
                 { label: 'Website Maintenance', href: '#services' },
               ].map((link) => (
                 <li key={link.label}>
@@ -353,7 +354,7 @@ const Footer = () => {
             >
               <div className="space-y-2">
                 <p className="text-sm sm:text-base font-medium">Prashant</p>
-                <p className="text-sm text-gray-400">Founder & Web Developer</p>
+                <p className="text-sm text-gray-400">Founder & Lead Developer</p>
                 <a 
                   href="mailto:prashants1704@gmail.com" 
                   className="text-sm sm:text-base hover:text-primary-400 transition-colors block"
@@ -375,7 +376,7 @@ const Footer = () => {
                 <p className="text-xs sm:text-sm text-gray-400">
                   Available Monday - Saturday<br />
                   9:00 AM - 8:00 PM IST<br />
-                  24/7 Support Available
+                  Quick Response Guaranteed
                 </p>
               </div>
             </motion.div>
@@ -396,19 +397,19 @@ const Footer = () => {
                 &copy; 2025 WebCraft. All rights reserved.
               </p>
               <p className="text-xs text-gray-500 mt-1">
-                Built with React & Firebase. Professional Web Development Services.
+                New Company, Fresh Ideas, Proven Results • Built with React & Firebase
               </p>
             </div>
             
             <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6 text-xs sm:text-sm text-center">
               <span className="text-gray-400">
-                🚀 Fast Delivery: 2-4 weeks
+                🚀 New & Motivated Team
               </span>
               <span className="text-gray-400">
                 ✅ 100% Satisfaction Guarantee
               </span>
               <span className="text-gray-400">
-                💬 24/7 Support Available
+                💬 Direct Founder Access
               </span>
             </div>
           </div>
@@ -416,13 +417,13 @@ const Footer = () => {
           {/* Additional Footer Info */}
           <div className="mt-6 pt-6 border-t border-gray-800 text-center">
             <p className="text-xs text-gray-500 mb-2">
-              Professional Web Development • React & Firebase • AI-Enhanced Features
+              Fresh Perspectives • Modern Technology • Personal Service
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-xs text-gray-500">
-              <span>🎯 15+ Projects Completed</span>
+              <span>🎯 10+ Live Projects</span>
               <span>💯 100% Client Satisfaction</span>
-              <span>⚡ Lightning Fast Websites</span>
-              <span>🔒 SSL & Security Included</span>
+              <span>⚡ Modern React Technology</span>
+              <span>🔒 Security & Quality First</span>
             </div>
           </div>
         </motion.div>
