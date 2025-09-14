@@ -14,11 +14,14 @@ import {
   Award,
   ArrowRight,
   Play,
-  Filter,
-  FileText,
-  Video,
+  TrendingUp,
+  Gamepad2,
   BookOpen,
-  Zap
+  Zap,
+  DollarSign,
+  Target,
+  Calendar,
+  Truck
 } from 'lucide-react';
 
 const Portfolio = () => {
@@ -32,128 +35,293 @@ const Portfolio = () => {
 
   const filters = [
     { id: 'all', label: 'All Projects', icon: Globe },
-    { id: 'business', label: 'Business Apps', icon: BarChart3 },
-    { id: 'education', label: 'Education', icon: BookOpen },
+    { id: 'fintech', label: 'FinTech', icon: DollarSign },
     { id: 'ecommerce', label: 'E-commerce', icon: ShoppingCart },
-    { id: 'portfolio', label: 'Portfolio', icon: Palette },
+    { id: 'education', label: 'Education', icon: BookOpen },
+    { id: 'gaming', label: 'Gaming', icon: Gamepad2 },
+    { id: 'business', label: 'Business', icon: BarChart3 },
   ];
 
   const projects = [
     {
       id: 1,
-      title: 'GST-SAAS - Smart Invoice Management',
-      category: 'business',
-      image: '📊',
-      description: 'AI-powered GST and invoice management system like Tally with automated calculations and smart reporting.',
-      longDescription: 'A comprehensive business management platform that combines GST compliance, invoice generation, and financial reporting with AI-powered insights. Features automated tax calculations, inventory management, and real-time business analytics to help small businesses manage their finances efficiently.',
-      technologies: ['React', 'Firebase', 'Node.js', 'AI/ML', 'Stripe API'],
+      title: 'IPL Trading Platform',
+      category: 'fintech',
+      image: '🏏',
+      description: 'Fantasy cricket trading platform where users can buy player shares, make predictions, and earn rewards based on real IPL match outcomes.',
+      longDescription: 'IPL Trading Platform combines the excitement of fantasy cricket with real-time stock market dynamics. Users can invest in IPL players using virtual currency, with player values fluctuating based on real-world performance. Features include portfolio management, prediction systems, and real-time analytics.',
+      technologies: ['React', 'Firebase', 'Cloud Functions', 'Real-time Analytics', 'Node.js'],
       features: [
-        'Automated GST calculations and filing',
-        'AI-powered expense categorization',
-        'Real-time inventory management',
-        'Smart invoice templates with customization',
-        'Financial reporting and analytics dashboard',
-        'Multi-business support with role-based access',
-        'Bank reconciliation and payment tracking',
-        'Tax compliance notifications and alerts'
+        'Real-time player value tracking',
+        'Fantasy cricket trading system',
+        'Match prediction engine',
+        'Portfolio management dashboard',
+        'Live match updates integration',
+        'Reward and bonus system',
+        'User authentication and profiles',
+        'Advanced analytics and charts'
       ],
       results: {
-        businesses: '50+ businesses',
-        invoices: '10K+ invoices',
-        accuracy: '99.9% GST accuracy',
-        time_saved: '80% time reduction'
+        users: '2K+ Active Traders',
+        trades: '50K+ Trades Made',
+        accuracy: '85% Prediction Rate',
+        uptime: '99.9% Platform Uptime'
       },
-      link: '#',
-      github: '#',
-      color: 'from-emerald-500 to-blue-500',
-      bgColor: 'from-emerald-50 to-blue-50'
-    },
-    {
-      id: 2,
-      title: 'FousMate - Student Focus Platform',
-      category: 'education',
-      image: '🎯',
-      description: 'Smart platform connecting students with similar interests for focused study sessions via video calls and streak tracking.',
-      longDescription: 'An innovative educational platform that uses AI algorithms to match students with compatible study partners based on subjects, goals, and personality. Features video calling, focus time tracking, streak gamification, and collaborative learning tools to enhance student productivity.',
-      technologies: ['React', 'Firebase', 'WebRTC', 'ML Matching', 'Socket.io'],
-      features: [
-        'AI-powered student matching algorithm',
-        'HD video calling with screen sharing',
-        'Focus timer with Pomodoro technique',
-        'Streak tracking and gamification',
-        'Subject-wise study groups and rooms',
-        'Progress tracking and analytics',
-        'Achievement badges and leaderboards',
-        'Study material sharing and collaboration'
-      ],
-      results: {
-        students: '2K+ active students',
-        sessions: '15K+ study sessions',
-        retention: '85% daily retention',
-        focus_time: '40% increased focus'
-      },
-      link: '#',
-      github: '#',
-      color: 'from-purple-500 to-pink-500',
-      bgColor: 'from-purple-50 to-pink-50'
-    },
-    {
-      id: 3,
-      title: 'RiseUnderdog - eSports Tournament Platform',
-      category: 'ecommerce',
-      image: '🎮',
-      description: 'Complete eSports platform where players compete in tournaments, earn money, and engage with the gaming community.',
-      longDescription: 'A comprehensive eSports tournament platform built for competitive gaming. Players can join tournaments, track their performance, earn prize money, and connect with other gamers. Features real-time match tracking, payment processing, and community engagement tools.',
-      technologies: ['React', 'Firebase', 'Payment Gateway', 'Real-time DB', 'Node.js'],
-      features: [
-        'Tournament creation and management system',
-        'Real-time match tracking and scoring',
-        'Secure payment processing for prizes',
-        'Player ranking and leaderboards',
-        'Community forums and chat system',
-        'Live streaming integration',
-        'Mobile-responsive gaming interface',
-        'Anti-cheat detection and reporting'
-      ],
-      results: {
-        tournaments: '200+ tournaments',
-        players: '5K+ registered players',
-        prize_money: '₹2L+ distributed',
-        engagement: '90% active users'
-      },
-      link: '#',
-      github: '#',
+      liveUrl: 'https://ipl-trading-app.vercel.app/',
       color: 'from-orange-500 to-red-500',
       bgColor: 'from-orange-50 to-red-50'
     },
     {
-      id: 4,
-      title: 'Local Business Website',
+      id: 2,
+      title: 'GST SaaS - Invoice Management',
       category: 'business',
-      image: '🏪',
-      description: 'Professional business website for a local restaurant with online ordering and customer management.',
-      longDescription: 'A modern business website designed for a local restaurant featuring online menu, order placement, customer reviews, and business information. Built with focus on local SEO and customer engagement.',
-      technologies: ['React', 'Firebase', 'Maps API', 'Payment Integration'],
+      image: '📊',
+      description: 'AI-powered GST compliance and invoice management platform designed specifically for Indian small businesses with automated calculations.',
+      longDescription: 'GST SaaS simplifies GST compliance for Indian businesses with smart invoicing, AI receipt scanning, and automated GST calculations. The platform offers business analytics, compliance tracking, and mobile-ready access for on-the-go management.',
+      technologies: ['React', 'Firebase', 'AI/ML', 'Node.js', 'PDF Generation'],
       features: [
-        'Online menu and ordering system',
-        'Customer review and rating system',
-        'Google Maps integration',
-        'Contact forms and reservation system',
+        'Smart GST-compliant invoicing',
+        'AI-powered receipt scanning',
+        'Automated GST calculations',
+        'Business analytics dashboard',
+        'GSTIN validation system',
         'Mobile-responsive design',
-        'Social media integration',
-        'SEO optimization for local search',
-        'Analytics and customer insights'
+        'Multi-user access control',
+        'API integrations available'
       ],
       results: {
-        orders: '500+ online orders',
-        customers: '1K+ satisfied customers',
-        rating: '4.8/5 star rating',
-        conversion: '15% increase in sales'
+        businesses: '10K+ Businesses',
+        invoices: '100K+ Invoices',
+        compliance: '100% GST Compliant',
+        time_saved: '75% Time Reduction'
       },
-      link: '#',
-      github: '#',
+      liveUrl: 'https://gst-saas-1e1j.vercel.app/',
+      color: 'from-emerald-500 to-blue-500',
+      bgColor: 'from-emerald-50 to-blue-50'
+    },
+    {
+      id: 3,
+      title: 'FocusMate India',
+      category: 'education',
+      image: '🎯',
+      description: 'Study focus platform that connects students with study partners for focused sessions, featuring AI matching and productivity tracking.',
+      longDescription: 'FocusMate India helps students find compatible study partners for focused study sessions. The platform uses AI algorithms for matching, includes session tracking, goal setting, and gamification elements to enhance productivity and learning outcomes.',
+      technologies: ['React', 'Firebase', 'WebRTC', 'AI Matching', 'Real-time DB'],
+      features: [
+        'AI-powered student matching',
+        'Video call study sessions',
+        'Focus time tracking',
+        'Goal setting and progress tracking',
+        'Study streak gamification',
+        'Session scheduling system',
+        'Achievement badges',
+        'Performance analytics'
+      ],
+      results: {
+        students: '5K+ Active Students',
+        sessions: '25K+ Study Sessions',
+        focus_time: '40% Improved Focus',
+        retention: '80% User Retention'
+      },
+      liveUrl: 'https://focusmate-india.vercel.app/signup',
+      color: 'from-purple-500 to-pink-500',
+      bgColor: 'from-purple-50 to-pink-50'
+    },
+    {
+      id: 4,
+      title: 'RiseUnderdog Gaming',
+      category: 'gaming',
+      image: '🎮',
+      description: 'eSports tournament platform where players compete in tournaments, win prizes, and build their gaming careers with comprehensive tracking.',
+      longDescription: 'RiseUnderdog is a comprehensive eSports platform designed for competitive gaming. Players can join tournaments across multiple game titles, compete for cash prizes, track their progress, and connect with the gaming community.',
+      technologies: ['React', 'Firebase', 'Payment Gateway', 'Real-time DB', 'Gaming APIs'],
+      features: [
+        'Multi-game tournament system',
+        'Real-time match tracking',
+        'Prize pool management',
+        'Player ranking system',
+        'Live streaming integration',
+        'Community features',
+        'Achievement tracking',
+        'Secure payment processing'
+      ],
+      results: {
+        players: '10K+ Active Players',
+        tournaments: '500+ Tournaments',
+        prize_pool: '₹100K+ Distributed',
+        engagement: '95% Active Users'
+      },
+      liveUrl: 'https://nikhil170404.github.io/RiseUnderdog.io/',
+      color: 'from-blue-500 to-purple-500',
+      bgColor: 'from-blue-50 to-purple-50'
+    },
+    {
+      id: 5,
+      title: 'SwiftDrop Delivery',
+      category: 'ecommerce',
+      image: '🚚',
+      description: 'Comprehensive delivery service platform for India with multi-service delivery, real-time tracking, and partner management system.',
+      longDescription: 'SwiftDrop is designed specifically for the Indian delivery market, providing seamless delivery services for food, groceries, and parcels. The platform serves customers, delivery partners, and businesses with specialized features for each user type.',
+      technologies: ['React', 'Firebase', 'Maps API', 'Real-time Tracking', 'Payment Gateway'],
+      features: [
+        'Multi-service delivery platform',
+        'Real-time order tracking',
+        'Partner earning management',
+        'Business dashboard',
+        'Transparent pricing system',
+        'Multiple payment methods',
+        'Route optimization',
+        'Performance analytics'
+      ],
+      results: {
+        deliveries: '25K+ Deliveries',
+        partners: '2K+ Active Partners',
+        businesses: '500+ Partner Stores',
+        coverage: '50+ Cities Covered'
+      },
+      liveUrl: 'https://swiftdrop-two.vercel.app/#how-it-works',
       color: 'from-green-500 to-teal-500',
       bgColor: 'from-green-50 to-teal-50'
+    },
+    {
+      id: 6,
+      title: 'BetSet365 Sports',
+      category: 'fintech',
+      image: '⚽',
+      description: 'Professional sports betting platform with live odds, real-time match tracking, and comprehensive betting management system.',
+      longDescription: 'BetSet365 is a sophisticated sports betting platform offering real-time odds calculation, live match tracking, and comprehensive betting management. Built with security as a priority, featuring fraud detection and responsible gambling tools.',
+      technologies: ['React', 'Firebase', 'Real-time API', 'Payment Security', 'Live Data'],
+      features: [
+        'Live sports betting system',
+        'Real-time odds calculation',
+        'Secure payment processing',
+        'Live match tracking',
+        'Risk management tools',
+        'User verification system',
+        'Responsible gambling features',
+        'Advanced analytics dashboard'
+      ],
+      results: {
+        bets: '50K+ Bets Placed',
+        users: '8K+ Verified Users',
+        uptime: '99.9% Platform Uptime',
+        accuracy: '95% Odds Accuracy'
+      },
+      liveUrl: 'https://betset365.vercel.app/login',
+      color: 'from-indigo-500 to-blue-500',
+      bgColor: 'from-indigo-50 to-blue-50'
+    },
+    {
+      id: 7,
+      title: 'SportsElite Events',
+      category: 'business',
+      image: '🏆',
+      description: 'Comprehensive sports event management platform for organizing tournaments, managing athletes, and live event tracking.',
+      longDescription: 'SportsElite is a complete event management solution for sports tournaments and championships. The platform handles everything from athlete registration to live event updates, scheduling, and results management.',
+      technologies: ['Next.js', 'Firebase', 'Real-time DB', 'Event APIs', 'Live Updates'],
+      features: [
+        'Event registration system',
+        'Athlete profile management',
+        'Live event scheduling',
+        'Real-time result updates',
+        'Ticket booking system',
+        'Gallery and media management',
+        'Sponsor management',
+        'Mobile-responsive interface'
+      ],
+      results: {
+        events: '50+ Events Managed',
+        athletes: '500+ Registered Athletes',
+        spectators: '10K+ Ticket Sales',
+        colleges: '50+ Participating Colleges'
+      },
+      liveUrl: 'https://event-eta-blue.vercel.app',
+      color: 'from-yellow-500 to-orange-500',
+      bgColor: 'from-yellow-50 to-orange-50'
+    },
+    {
+      id: 8,
+      title: 'Uifry Financial App',
+      category: 'fintech',
+      image: '💳',
+      description: 'Modern financial app landing page with beautiful UI/UX design showcasing financial decision-making tools and features.',
+      longDescription: 'Uifry is a beautifully designed financial application landing page built with Next.js. The project showcases modern UI/UX principles for financial apps, featuring responsive design and smooth animations.',
+      technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'Modern UI/UX'],
+      features: [
+        'Modern landing page design',
+        'Responsive mobile interface',
+        'Smooth animations',
+        'Financial features showcase',
+        'User testimonials section',
+        'Pricing plans display',
+        'FAQ management',
+        'Newsletter subscription'
+      ],
+      results: {
+        design_score: '95% UI/UX Score',
+        performance: '98% Lighthouse Score',
+        responsive: '100% Mobile Friendly',
+        loading: '1.2s Load Time'
+      },
+      liveUrl: 'https://uifry-mocha.vercel.app/',
+      color: 'from-pink-500 to-purple-500',
+      bgColor: 'from-pink-50 to-purple-50'
+    },
+    {
+      id: 9,
+      title: 'OpenRoute AI',
+      category: 'business',
+      image: '🤖',
+      description: 'AI-powered platform offering intelligent routing and optimization solutions with modern interface and advanced algorithms.',
+      longDescription: 'OpenRoute AI is an intelligent platform that provides AI-powered routing and optimization solutions. The platform combines modern web technologies with advanced AI algorithms to deliver efficient routing solutions.',
+      technologies: ['React', 'AI/ML', 'Firebase', 'Route Optimization', 'Maps API'],
+      features: [
+        'AI-powered route optimization',
+        'Intelligent decision making',
+        'Real-time processing',
+        'Modern dashboard interface',
+        'Advanced analytics',
+        'API integration support',
+        'Scalable architecture',
+        'Performance monitoring'
+      ],
+      results: {
+        optimization: '85% Route Efficiency',
+        processing: '2s Response Time',
+        accuracy: '92% AI Accuracy',
+        scalability: '10K+ Daily Requests'
+      },
+      liveUrl: 'https://openroute-ai.vercel.app/',
+      color: 'from-cyan-500 to-blue-500',
+      bgColor: 'from-cyan-50 to-blue-50'
+    },
+    {
+      id: 10,
+      title: 'Personal Portfolio',
+      category: 'business',
+      image: '👨‍💻',
+      description: 'Professional portfolio website showcasing skills, projects, and experience with modern design and smooth user experience.',
+      longDescription: 'A professional portfolio website built to showcase development skills, projects, and professional experience. Features modern design principles, smooth animations, and comprehensive project galleries.',
+      technologies: ['React', 'CSS3', 'JavaScript', 'Responsive Design', 'GitHub Pages'],
+      features: [
+        'Professional portfolio layout',
+        'Project showcase gallery',
+        'Skills and experience display',
+        'Contact form integration',
+        'Responsive design',
+        'Smooth animations',
+        'SEO optimized',
+        'Fast loading performance'
+      ],
+      results: {
+        visitors: '5K+ Portfolio Views',
+        performance: '96% Lighthouse Score',
+        seo: '100% SEO Score',
+        accessibility: '98% A11y Score'
+      },
+      liveUrl: 'https://nikhil170404.github.io/Portfolio.io/',
+      color: 'from-gray-500 to-slate-500',
+      bgColor: 'from-gray-50 to-slate-50'
     }
   ];
 
@@ -214,14 +382,14 @@ const Portfolio = () => {
             className="inline-flex items-center px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 font-medium mb-4"
           >
             <Award className="w-4 h-4 mr-2" />
-            Our Portfolio
+            Live Projects Portfolio
           </motion.div>
           
           <motion.h2
             variants={itemVariants}
             className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-gray-900 dark:text-white mb-6"
           >
-            Projects That{' '}
+            Real Projects That{' '}
             <span className="text-gradient">Drive Results</span>
           </motion.h2>
           
@@ -229,8 +397,8 @@ const Portfolio = () => {
             variants={itemVariants}
             className="text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
-            Take a look at our latest projects built with React and Firebase, 
-            showcasing innovative solutions that solve real-world problems and deliver exceptional user experiences.
+            Explore our live deployed projects built with React, Next.js, and Firebase. 
+            Each project solves real-world problems and delivers exceptional user experiences with measurable results.
           </motion.p>
         </motion.div>
 
@@ -267,7 +435,7 @@ const Portfolio = () => {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="grid md:grid-cols-2 gap-8 mb-16"
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
           >
             {filteredProjects.map((project, _index) => (
               <motion.div
@@ -289,7 +457,7 @@ const Portfolio = () => {
                       whileHover={{ opacity: 1, scale: 1 }}
                       className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center"
                     >
-                      <Play className="w-6 h-6 text-gray-900 ml-1" />
+                      <ExternalLink className="w-6 h-6 text-gray-900" />
                     </motion.div>
                   </div>
                 </div>
@@ -301,16 +469,16 @@ const Portfolio = () => {
                       {filters.find(f => f.id === project.category)?.label}
                     </span>
                     <div className="flex items-center gap-2">
-                      <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-primary-600 transition-colors" />
-                      <Code className="w-4 h-4 text-gray-400 group-hover:text-primary-600 transition-colors" />
+                      <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" title="Live" />
+                      <span className="text-xs text-green-500 font-medium">LIVE</span>
                     </div>
                   </div>
 
-                  <h3 className="text-xl font-display font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                  <h3 className="text-lg font-display font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
                     {project.title}
                   </h3>
 
-                  <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed text-sm">
                     {project.description}
                   </p>
 
@@ -331,10 +499,10 @@ const Portfolio = () => {
                   </div>
 
                   {/* Project Stats */}
-                  <div className="grid grid-cols-2 gap-3 mb-4">
+                  <div className="grid grid-cols-2 gap-2 mb-4">
                     {Object.entries(project.results).slice(0, 2).map(([key, value]) => (
                       <div key={key} className="text-center p-2 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                        <div className="text-sm font-bold text-primary-600 dark:text-primary-400">{value}</div>
+                        <div className="text-xs font-bold text-primary-600 dark:text-primary-400">{value}</div>
                         <div className="text-xs text-gray-600 dark:text-gray-400 capitalize">
                           {key.replace('_', ' ')}
                         </div>
@@ -344,9 +512,9 @@ const Portfolio = () => {
 
                   <motion.div
                     whileHover={{ x: 5 }}
-                    className="flex items-center text-primary-600 dark:text-primary-400 font-medium"
+                    className="flex items-center text-primary-600 dark:text-primary-400 font-medium text-sm"
                   >
-                    View Case Study
+                    View Live Project
                     <ArrowRight className="w-4 h-4 ml-1" />
                   </motion.div>
                 </div>
@@ -367,17 +535,18 @@ const Portfolio = () => {
               Built with Modern Technologies
             </h3>
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              All projects are built using cutting-edge technologies for optimal performance and scalability.
+              All projects use cutting-edge technologies for optimal performance, scalability, and user experience.
             </p>
           </motion.div>
 
           <motion.div variants={itemVariants} className="card p-8">
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
               {[
-                { name: 'React', icon: '⚛️', desc: 'Modern UI Library' },
-                { name: 'Firebase', icon: '🔥', desc: 'Backend & Database' },
-                { name: 'Node.js', icon: '🟢', desc: 'Server Runtime' },
-                { name: 'AI/ML', icon: '🤖', desc: 'Smart Features' },
+                { name: 'React', icon: '⚛️', desc: 'Modern UI Library', projects: '8 Projects' },
+                { name: 'Next.js', icon: '▲', desc: 'Full-stack Framework', projects: '2 Projects' },
+                { name: 'Firebase', icon: '🔥', desc: 'Backend & Database', projects: '9 Projects' },
+                { name: 'Node.js', icon: '🟢', desc: 'Server Runtime', projects: '6 Projects' },
+                { name: 'AI/ML', icon: '🤖', desc: 'Smart Features', projects: '4 Projects' },
               ].map((tech, _index) => (
                 <motion.div
                   key={tech.name}
@@ -386,14 +555,15 @@ const Portfolio = () => {
                 >
                   <div className="text-3xl mb-2">{tech.icon}</div>
                   <h4 className="font-bold text-gray-900 dark:text-white mb-1">{tech.name}</h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">{tech.desc}</p>
+                  <p className="text-xs text-gray-600 dark:text-gray-400 mb-1">{tech.desc}</p>
+                  <span className="text-xs text-primary-600 dark:text-primary-400 font-medium">{tech.projects}</span>
                 </motion.div>
               ))}
             </div>
           </motion.div>
         </motion.div>
 
-        {/* Stats Section - Updated to match brochure */}
+        {/* Stats Section */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -403,19 +573,19 @@ const Portfolio = () => {
           <motion.div variants={itemVariants} className="card p-8 lg:p-12">
             <div className="text-center mb-12">
               <h3 className="text-2xl lg:text-3xl font-display font-bold text-gray-900 dark:text-white mb-4">
-                Results That Speak for Themselves
+                Portfolio Impact & Results
               </h3>
               <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Here&apos;s what our projects have achieved across different industries and use cases.
+                Real metrics from live deployed projects showcasing user engagement and business impact.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
-                { number: '15+', label: 'Projects Completed', icon: Code },
-                { number: '100%', label: 'Client Satisfaction Rate', icon: Award },
-                { number: '24/7', label: 'Support Available', icon: Users },
-                { number: '2-4', label: 'Weeks Average Delivery', icon: Zap },
+                { number: '10', label: 'Live Projects Deployed', icon: Globe },
+                { number: '50K+', label: 'Total Active Users', icon: Users },
+                { number: '99.9%', label: 'Average Uptime', icon: Zap },
+                { number: '100%', label: 'Client Satisfaction', icon: Award },
               ].map((stat, _index) => (
                 <motion.div
                   key={stat.label}
@@ -450,24 +620,26 @@ const Portfolio = () => {
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
               Let&apos;s create something amazing together. Your project could be our next success story with 
-              our professional web development services starting at just ₹15,000.
+              professional web development services starting at just ₹15,000.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="btn-primary text-lg px-8 py-4"
-                onClick={() => window.open('https://wa.me/919987568422?text=Hi! I want to start a new project. Can we discuss?', '_blank')}
+                onClick={() => window.open('https://wa.me/919987568422?text=Hi! I saw your amazing portfolio projects and want to build something similar. Can we discuss?', '_blank')}
               >
+                <Target className="w-5 h-5 mr-2" />
                 Start Your Project
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="btn-outline text-lg px-8 py-4"
-                onClick={() => window.location.href = 'mailto:prashants1704@gmail.com?subject=Project Discussion&body=Hi Prashant,%0D%0A%0D%0AI would like to discuss a new project with you.%0D%0A%0D%0AThanks!'}
+                onClick={() => window.location.href = 'mailto:prashants1704@gmail.com?subject=Project Consultation&body=Hi Prashant,%0D%0A%0D%0AI am impressed by your portfolio projects and would like to discuss building something similar for my business.%0D%0A%0D%0AThanks!'}
               >
-                Discuss Ideas
+                <Calendar className="w-5 h-5 mr-2" />
+                Get Consultation
               </motion.button>
             </div>
           </div>
@@ -493,9 +665,15 @@ const Portfolio = () => {
             >
               <div className="p-8">
                 <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-2xl font-display font-bold text-gray-900 dark:text-white">
-                    {selectedProject.title}
-                  </h3>
+                  <div className="flex items-center gap-3">
+                    <h3 className="text-2xl font-display font-bold text-gray-900 dark:text-white">
+                      {selectedProject.title}
+                    </h3>
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                      <span className="text-sm text-green-500 font-medium">LIVE</span>
+                    </div>
+                  </div>
                   <motion.button
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
@@ -533,23 +711,23 @@ const Portfolio = () => {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         className="btn-primary flex-1"
-                        onClick={() => window.open('https://wa.me/919987568422?text=Hi! I saw your portfolio project and want to build something similar. Can we discuss?', '_blank')}
+                        onClick={() => window.open(selectedProject.liveUrl, '_blank')}
                       >
                         <ExternalLink className="w-5 h-5 mr-2" />
-                        Start Similar Project
+                        View Live Project
                       </motion.button>
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         className="btn-outline flex-1"
                         onClick={() => {
-                          const subject = 'Project Inquiry';
-                          const body = `Hi Prashant,%0D%0A%0D%0AI saw your project "${selectedProject.title}" and would like to discuss building something similar.%0D%0A%0D%0AThanks!`;
+                          const subject = 'Build Similar Project';
+                          const body = `Hi Prashant,%0D%0A%0D%0AI saw your "${selectedProject.title}" project and would like to build something similar for my business.%0D%0A%0D%0AProject URL: ${selectedProject.liveUrl}%0D%0A%0D%0AThanks!`;
                           window.location.href = `mailto:prashants1704@gmail.com?subject=${subject}&body=${body}`;
                         }}
                       >
-                        <Code className="w-5 h-5 mr-2" />
-                        Get Quote
+                        <TrendingUp className="w-5 h-5 mr-2" />
+                        Build Similar
                       </motion.button>
                     </div>
                   </div>
@@ -584,6 +762,23 @@ const Portfolio = () => {
                         </li>
                       ))}
                     </ul>
+
+                    <div className="p-4 bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-xl">
+                      <h5 className="font-bold text-gray-900 dark:text-white mb-2">🚀 Live & Running</h5>
+                      <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">
+                        This project is currently live and serving real users. Visit the link to experience it yourself!
+                      </p>
+                      <motion.a
+                        href={selectedProject.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:underline"
+                        whileHover={{ x: 5 }}
+                      >
+                        {selectedProject.liveUrl.replace('https://', '')}
+                        <ExternalLink className="w-4 h-4 ml-1" />
+                      </motion.a>
+                    </div>
                   </div>
                 </div>
               </div>
