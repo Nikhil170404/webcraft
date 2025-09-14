@@ -58,8 +58,8 @@ const Portfolio = () => {
         'Tax compliance notifications and alerts'
       ],
       results: {
-        businesses: '200+ businesses',
-        invoices: '50K+ invoices',
+        businesses: '50+ businesses',
+        invoices: '10K+ invoices',
         accuracy: '99.9% GST accuracy',
         time_saved: '80% time reduction'
       },
@@ -87,8 +87,8 @@ const Portfolio = () => {
         'Study material sharing and collaboration'
       ],
       results: {
-        students: '5K+ active students',
-        sessions: '25K+ study sessions',
+        students: '2K+ active students',
+        sessions: '15K+ study sessions',
         retention: '85% daily retention',
         focus_time: '40% increased focus'
       },
@@ -116,9 +116,9 @@ const Portfolio = () => {
         'Anti-cheat detection and reporting'
       ],
       results: {
-        tournaments: '500+ tournaments',
-        players: '10K+ registered players',
-        prize_money: '₹5L+ distributed',
+        tournaments: '200+ tournaments',
+        players: '5K+ registered players',
+        prize_money: '₹2L+ distributed',
         engagement: '90% active users'
       },
       link: '#',
@@ -128,27 +128,27 @@ const Portfolio = () => {
     },
     {
       id: 4,
-      title: 'BetSet365 - Sports Betting Platform',
-      category: 'ecommerce',
-      image: '⚽',
-      description: 'Full-stack sports betting platform with real-time odds, live match tracking, and secure payment processing.',
-      longDescription: 'A sophisticated sports betting platform offering real-time odds calculation, live match tracking, and comprehensive betting management. Built with security as a priority, featuring fraud detection, responsible gambling tools, and seamless user experience.',
-      technologies: ['React', 'Firebase', 'Real-time API', 'Payment Security', 'Analytics'],
+      title: 'Local Business Website',
+      category: 'business',
+      image: '🏪',
+      description: 'Professional business website for a local restaurant with online ordering and customer management.',
+      longDescription: 'A modern business website designed for a local restaurant featuring online menu, order placement, customer reviews, and business information. Built with focus on local SEO and customer engagement.',
+      technologies: ['React', 'Firebase', 'Maps API', 'Payment Integration'],
       features: [
-        'Real-time sports odds and betting',
-        'Live match tracking and updates',
-        'Secure wallet and payment system',
-        'Responsible gambling controls',
-        'Multi-sport betting support',
-        'Advanced analytics and insights',
-        'Mobile-first responsive design',
-        'KYC verification and compliance'
+        'Online menu and ordering system',
+        'Customer review and rating system',
+        'Google Maps integration',
+        'Contact forms and reservation system',
+        'Mobile-responsive design',
+        'Social media integration',
+        'SEO optimization for local search',
+        'Analytics and customer insights'
       ],
       results: {
-        bets_placed: '100K+ bets placed',
-        users: '8K+ verified users',
-        uptime: '99.9% platform uptime',
-        processing: '2-sec bet processing'
+        orders: '500+ online orders',
+        customers: '1K+ satisfied customers',
+        rating: '4.8/5 star rating',
+        conversion: '15% increase in sales'
       },
       link: '#',
       github: '#',
@@ -393,7 +393,7 @@ const Portfolio = () => {
           </motion.div>
         </motion.div>
 
-        {/* Stats Section */}
+        {/* Stats Section - Updated to match brochure */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -406,16 +406,16 @@ const Portfolio = () => {
                 Results That Speak for Themselves
               </h3>
               <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Here what our projects have achieved across different industries and use cases.
+                Here&apos;s what our projects have achieved across different industries and use cases.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
-                { number: '4+', label: 'Major Projects Completed', icon: Code },
-                { number: '25K+', label: 'Active Users Across Platforms', icon: Users },
-                { number: '99%', label: 'Client Satisfaction Rate', icon: Award },
-                { number: '80%', label: 'Average Performance Improvement', icon: Zap },
+                { number: '15+', label: 'Projects Completed', icon: Code },
+                { number: '100%', label: 'Client Satisfaction Rate', icon: Award },
+                { number: '24/7', label: 'Support Available', icon: Users },
+                { number: '2-4', label: 'Weeks Average Delivery', icon: Zap },
               ].map((stat, _index) => (
                 <motion.div
                   key={stat.label}
@@ -449,14 +449,15 @@ const Portfolio = () => {
               Ready to Build Your Next Big Project?
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Let create something amazing together. Your project could be our next success story.
+              Let&apos;s create something amazing together. Your project could be our next success story with 
+              our professional web development services starting at just ₹15,000.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="btn-primary text-lg px-8 py-4"
-                onClick={() => window.open('https://wa.me/919987568422', '_blank')}
+                onClick={() => window.open('https://wa.me/919987568422?text=Hi! I want to start a new project. Can we discuss?', '_blank')}
               >
                 Start Your Project
               </motion.button>
@@ -464,7 +465,7 @@ const Portfolio = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="btn-outline text-lg px-8 py-4"
-                onClick={() => window.location.href = 'mailto:prashants1704@gmail.com'}
+                onClick={() => window.location.href = 'mailto:prashants1704@gmail.com?subject=Project Discussion&body=Hi Prashant,%0D%0A%0D%0AI would like to discuss a new project with you.%0D%0A%0D%0AThanks!'}
               >
                 Discuss Ideas
               </motion.button>
@@ -532,17 +533,23 @@ const Portfolio = () => {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         className="btn-primary flex-1"
+                        onClick={() => window.open('https://wa.me/919987568422?text=Hi! I saw your portfolio project and want to build something similar. Can we discuss?', '_blank')}
                       >
                         <ExternalLink className="w-5 h-5 mr-2" />
-                        Live Demo
+                        Start Similar Project
                       </motion.button>
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         className="btn-outline flex-1"
+                        onClick={() => {
+                          const subject = 'Project Inquiry';
+                          const body = `Hi Prashant,%0D%0A%0D%0AI saw your project "${selectedProject.title}" and would like to discuss building something similar.%0D%0A%0D%0AThanks!`;
+                          window.location.href = `mailto:prashants1704@gmail.com?subject=${subject}&body=${body}`;
+                        }}
                       >
                         <Code className="w-5 h-5 mr-2" />
-                        View Code
+                        Get Quote
                       </motion.button>
                     </div>
                   </div>

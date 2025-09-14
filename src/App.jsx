@@ -226,7 +226,7 @@ const ScrollToTop = () => {
   );
 };
 
-// Footer Component
+// Footer Component with Updated Contact Information
 const Footer = () => {
   return (
     <footer className="bg-gray-900 dark:bg-gray-950 text-white py-12 sm:py-16 lg:py-20">
@@ -250,9 +250,8 @@ const Footer = () => {
               viewport={{ once: true }}
               className="text-gray-300 mb-6 max-w-md text-sm sm:text-base leading-relaxed"
             >
-              Creating exceptional digital experiences for small businesses with AI-enhanced, 
-              fast, and optimized websites at fair prices. Transform your business with 
-              cutting-edge web solutions.
+              Transform Your Business with AI-Enhanced Websites that are Fast, Beautiful, and Results-Driven. 
+              Professional web development services starting at just ₹15,000 with 100% satisfaction guarantee.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -261,16 +260,30 @@ const Footer = () => {
               viewport={{ once: true }}
               className="flex space-x-4"
             >
-              {/* Social media links would go here */}
+              {/* Social media links */}
               <div className="flex space-x-4">
                 {[
-                  { name: 'LinkedIn', icon: '💼' },
-                  { name: 'Twitter', icon: '🐦' },
-                  { name: 'GitHub', icon: '💻' },
+                  { 
+                    name: 'Email', 
+                    icon: '📧', 
+                    link: 'mailto:prashants1704@gmail.com' 
+                  },
+                  { 
+                    name: 'WhatsApp', 
+                    icon: '💬', 
+                    link: 'https://wa.me/919987568422' 
+                  },
+                  { 
+                    name: 'Phone', 
+                    icon: '📞', 
+                    link: 'tel:+919987568422' 
+                  },
                 ].map((social) => (
                   <motion.a
                     key={social.name}
-                    href="#"
+                    href={social.link}
+                    target={social.link.startsWith('http') ? '_blank' : '_self'}
+                    rel={social.link.startsWith('http') ? 'noopener noreferrer' : ''}
                     className="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-lg flex items-center justify-center transition-colors duration-300"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
@@ -292,7 +305,7 @@ const Footer = () => {
               viewport={{ once: true }}
               className="text-base sm:text-lg font-semibold mb-4 sm:mb-6"
             >
-              Quick Links
+              Our Services
             </motion.h4>
             <motion.ul
               initial={{ opacity: 0, y: 20 }}
@@ -302,11 +315,11 @@ const Footer = () => {
               className="space-y-3"
             >
               {[
-                { label: 'Home', href: '#home' },
-                { label: 'About', href: '#about' },
-                { label: 'Services', href: '#services' },
-                { label: 'Portfolio', href: '#portfolio' },
-                { label: 'Contact', href: '#contact' },
+                { label: 'Starter Package - ₹15,000', href: '#services' },
+                { label: 'Professional Package - ₹25,000', href: '#services' },
+                { label: 'Enterprise Package - ₹40,000', href: '#services' },
+                { label: 'SEO & Marketing', href: '#services' },
+                { label: 'Website Maintenance', href: '#services' },
               ].map((link) => (
                 <li key={link.label}>
                   <a 
@@ -341,14 +354,28 @@ const Footer = () => {
               <div className="space-y-2">
                 <p className="text-sm sm:text-base font-medium">Prashant</p>
                 <p className="text-sm text-gray-400">Founder & Web Developer</p>
-                <p className="text-sm sm:text-base">prashant@webcraft.com</p>
-                <p className="text-sm sm:text-base">+1 (555) 123-4567</p>
+                <a 
+                  href="mailto:prashants1704@gmail.com" 
+                  className="text-sm sm:text-base hover:text-primary-400 transition-colors block"
+                >
+                  prashants1704@gmail.com
+                </a>
+                <a 
+                  href="https://wa.me/919987568422" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-sm sm:text-base hover:text-primary-400 transition-colors block"
+                >
+                  +91 99875 68422
+                </a>
+                <p className="text-sm text-gray-400">Mumbai, Maharashtra, India</p>
               </div>
               
               <div className="pt-4">
                 <p className="text-xs sm:text-sm text-gray-400">
-                  Available Monday - Friday<br />
-                  9:00 AM - 6:00 PM PST
+                  Available Monday - Saturday<br />
+                  9:00 AM - 8:00 PM IST<br />
+                  24/7 Support Available
                 </p>
               </div>
             </motion.div>
@@ -369,17 +396,33 @@ const Footer = () => {
                 &copy; 2025 WebCraft. All rights reserved.
               </p>
               <p className="text-xs text-gray-500 mt-1">
-                Built with React & Tailwind CSS. Powered by AI.
+                Built with React & Firebase. Professional Web Development Services.
               </p>
             </div>
             
-            <div className="flex space-x-6 text-xs sm:text-sm">
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">
-                Terms of Service
-              </a>
+            <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6 text-xs sm:text-sm text-center">
+              <span className="text-gray-400">
+                🚀 Fast Delivery: 2-4 weeks
+              </span>
+              <span className="text-gray-400">
+                ✅ 100% Satisfaction Guarantee
+              </span>
+              <span className="text-gray-400">
+                💬 24/7 Support Available
+              </span>
+            </div>
+          </div>
+          
+          {/* Additional Footer Info */}
+          <div className="mt-6 pt-6 border-t border-gray-800 text-center">
+            <p className="text-xs text-gray-500 mb-2">
+              Professional Web Development • React & Firebase • AI-Enhanced Features
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 text-xs text-gray-500">
+              <span>🎯 15+ Projects Completed</span>
+              <span>💯 100% Client Satisfaction</span>
+              <span>⚡ Lightning Fast Websites</span>
+              <span>🔒 SSL & Security Included</span>
             </div>
           </div>
         </motion.div>

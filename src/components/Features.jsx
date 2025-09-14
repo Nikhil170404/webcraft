@@ -16,7 +16,9 @@ import {
   ArrowRight,
   Bot,
   Rocket,
-  Globe
+  Globe,
+  Mail,
+  Phone
 } from 'lucide-react';
 
 const Features = () => {
@@ -27,33 +29,34 @@ const Features = () => {
 
   const [activeTab, setActiveTab] = useState('performance');
 
+  // Updated main features based on the brochure
   const mainFeatures = [
     {
       icon: Zap,
       title: 'Lightning Fast Performance',
-      description: 'Websites that load in under 2 seconds with 99.9% uptime guarantee.',
+      description: 'Websites that load in under 2 seconds with optimized code and modern best practices.',
       stat: '2x faster',
       color: 'from-yellow-500 to-orange-500'
     },
     {
       icon: Shield,
-      title: 'Enterprise Security',
-      description: 'SSL certificates, secure hosting, and regular security updates included.',
-      stat: '100% secure',
+      title: '100% Satisfaction Guarantee',
+      description: 'Money-back guarantee ensures you get exactly what you need for your business.',
+      stat: '100% guaranteed',
       color: 'from-green-500 to-emerald-500'
     },
     {
       icon: Smartphone,
       title: 'Mobile-First Design',
       description: 'Perfect experience across all devices with responsive design principles.',
-      stat: '95% mobile score',
+      stat: '95+ mobile score',
       color: 'from-blue-500 to-cyan-500'
     },
     {
-      icon: Search,
-      title: 'SEO Optimized',
-      description: 'Built-in SEO best practices to help you rank higher in search results.',
-      stat: '+150% traffic',
+      icon: Clock,
+      title: 'Fast Delivery',
+      description: 'Most projects completed in 2-4 weeks with regular updates and communication.',
+      stat: '2-4 weeks',
       color: 'from-purple-500 to-pink-500'
     },
   ];
@@ -61,55 +64,55 @@ const Features = () => {
   const tabContent = {
     performance: {
       title: 'Performance That Converts',
-      subtitle: 'Speed is everything in the digital world',
+      subtitle: 'Speed and reliability that drives business results',
       features: [
         {
           icon: Rocket,
-          title: 'Core Web Vitals Optimization',
-          description: 'Perfect scores for LCP, FID, and CLS metrics that Google loves.',
+          title: 'Optimized Loading Speed',
+          description: 'Under 2-second loading times for better user experience and SEO.',
         },
         {
           icon: Zap,
-          title: 'Advanced Caching',
-          description: 'Multi-layer caching strategy for instant page loads.',
+          title: 'Modern Technology Stack',
+          description: 'Built with React and Firebase for scalable, fast performance.',
         },
         {
           icon: Globe,
-          title: 'Global CDN',
-          description: 'Content delivered from the closest server to your users.',
+          title: 'Global Performance',
+          description: 'Optimized for users worldwide with best practices implementation.',
         },
         {
           icon: Code2,
-          title: 'Optimized Code',
-          description: 'Clean, minimal code that loads fast and runs smooth.',
+          title: 'Clean, Efficient Code',
+          description: 'Well-structured code that loads fast and runs smoothly.',
         },
       ],
       image: '⚡',
       bgColor: 'from-yellow-50 to-orange-50'
     },
     technology: {
-      title: 'Cutting-Edge Technology',
-      subtitle: 'Built with the latest and greatest',
+      title: 'Modern Technology Stack',
+      subtitle: 'Built with the latest and most reliable technologies',
       features: [
         {
           icon: Code2,
-          title: 'React & Next.js',
+          title: 'React & Firebase',
           description: 'Modern frameworks for scalable, maintainable applications.',
         },
         {
           icon: Bot,
-          title: 'AI Integration',
-          description: 'Smart chatbots and automated content generation.',
+          title: 'AI-Enhanced Features',
+          description: 'Smart chatbots and automated features to enhance user experience.',
         },
         {
           icon: Shield,
           title: 'Security First',
-          description: 'Enterprise-grade security measures and regular updates.',
+          description: 'SSL certificates and secure hosting for complete protection.',
         },
         {
           icon: BarChart3,
-          title: 'Analytics Built-in',
-          description: 'Comprehensive tracking and performance monitoring.',
+          title: 'Analytics Integration',
+          description: 'Google Analytics and performance monitoring built-in.',
         },
       ],
       image: '🚀',
@@ -117,27 +120,27 @@ const Features = () => {
     },
     design: {
       title: 'Beautiful & Functional Design',
-      subtitle: 'Where aesthetics meet usability',
+      subtitle: 'Where aesthetics meet usability for better results',
       features: [
         {
           icon: Palette,
           title: 'Custom Design System',
-          description: 'Unique visual identity that reflects your brand perfectly.',
+          description: 'Unique visual identity that perfectly reflects your brand.',
         },
         {
           icon: Users,
           title: 'User Experience Focus',
-          description: 'Every element designed for maximum user engagement.',
+          description: 'Every element designed for maximum user engagement and conversion.',
         },
         {
           icon: Smartphone,
-          title: 'Responsive Excellence',
-          description: 'Flawless experience on every device and screen size.',
+          title: 'Mobile-First Approach',
+          description: 'Designed for mobile first, then optimized for all screen sizes.',
         },
         {
           icon: Award,
-          title: 'Award-Winning Design',
-          description: 'Designs that have won industry recognition and praise.',
+          title: 'Professional Quality',
+          description: 'High-quality designs that compete with industry leaders.',
         },
       ],
       image: '🎨',
@@ -145,27 +148,27 @@ const Features = () => {
     },
     support: {
       title: '24/7 Support & Maintenance',
-      subtitle: 'We\'ve got your back, always',
+      subtitle: 'We\'ve got your back with continuous support',
       features: [
         {
           icon: Clock,
-          title: 'Round-the-Clock Support',
+          title: '24/7 Premium Support',
           description: 'Expert help available whenever you need it, day or night.',
         },
         {
           icon: Shield,
           title: 'Regular Updates',
-          description: 'Keep your site secure and up-to-date automatically.',
+          description: 'Keep your site secure and up-to-date with ongoing maintenance.',
         },
         {
           icon: BarChart3,
           title: 'Performance Monitoring',
-          description: 'Continuous monitoring and optimization of your site.',
+          description: 'Continuous monitoring and optimization of your website.',
         },
         {
           icon: Users,
           title: 'Training & Documentation',
-          description: 'Complete guides and training to manage your website.',
+          description: 'Complete guides and training to manage your website effectively.',
         },
       ],
       image: '🛠️',
@@ -261,8 +264,8 @@ const Features = () => {
             variants={itemVariants}
             className="text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
-            We dont just build websites – we create digital experiences that drive results. 
-            Heres what makes WebCraft the perfect choice for your business.
+            We do not just build websites – we create digital experiences that drive results. 
+            Here is what makes WebCraft the perfect choice for your business.
           </motion.p>
         </motion.div>
 
@@ -361,6 +364,7 @@ const Features = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="btn-primary flex items-center"
+                    onClick={() => window.open('https://wa.me/919987568422?text=Hi! I want to learn more about your ' + tabContent[activeTab].title.toLowerCase() + ' features.', '_blank')}
                   >
                     Learn More
                     <ArrowRight className="w-5 h-5 ml-2" />
@@ -395,7 +399,7 @@ const Features = () => {
           </AnimatePresence>
         </motion.div>
 
-        {/* Comparison Section */}
+        {/* Comparison Section - WebCraft vs Others */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -421,10 +425,10 @@ const Features = () => {
                 <div className="space-y-4">
                   {[
                     'Generic templates',
-                    'Slow loading times',
+                    'Slow delivery (6-12 weeks)',
                     'Limited customization',
-                    'Basic support',
-                    'No AI integration',
+                    'Basic support only',
+                    'Hidden costs',
                     'Outdated technology'
                   ].map((item, index) => (
                     <div key={index} className="flex items-center text-gray-500 dark:text-gray-400">
@@ -443,11 +447,11 @@ const Features = () => {
                 <div className="space-y-4">
                   {[
                     'Custom designs',
-                    'Lightning fast',
+                    'Fast delivery (2-4 weeks)',
                     'Fully customizable',
                     '24/7 premium support',
-                    'AI-enhanced features',
-                    'Latest technologies'
+                    'Transparent pricing',
+                    'Modern React + Firebase'
                   ].map((item, index) => (
                     <div key={index} className="flex items-center text-green-600 dark:text-green-400">
                       <CheckCircle className="w-4 h-4 mr-3" />
@@ -457,7 +461,7 @@ const Features = () => {
                 </div>
               </div>
 
-              {/* Features Column */}
+              {/* Benefits Column */}
               <div className="text-center p-6">
                 <h4 className="text-xl font-display font-bold text-gray-900 dark:text-white mb-6">
                   What You Get
@@ -465,11 +469,11 @@ const Features = () => {
                 <div className="space-y-4">
                   {[
                     'Unique brand identity',
-                    '2x faster loading',
+                    'Faster time to market',
                     'Unlimited revisions',
                     'Expert guidance',
-                    'Future-ready tech',
-                    'Ongoing updates'
+                    'Fair, honest pricing',
+                    'Future-ready technology'
                   ].map((item, index) => (
                     <div key={index} className="text-gray-700 dark:text-gray-300">
                       {item}
@@ -477,6 +481,48 @@ const Features = () => {
                   ))}
                 </div>
               </div>
+            </div>
+          </motion.div>
+        </motion.div>
+
+        {/* Package Benefits */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          className="mb-16"
+        >
+          <motion.div variants={itemVariants} className="text-center mb-8">
+            <h3 className="text-2xl lg:text-3xl font-display font-bold text-gray-900 dark:text-white mb-4">
+              Included in Every Package
+            </h3>
+            <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              Standard features included with all our packages, ensuring you get maximum value.
+            </p>
+          </motion.div>
+
+          <motion.div variants={itemVariants} className="card p-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { icon: Smartphone, title: 'Mobile Responsive', desc: 'Perfect on all devices' },
+                { icon: Search, title: 'Basic SEO Setup', desc: 'Optimized for search engines' },
+                { icon: Shield, title: 'SSL Certificate', desc: 'Secure and trusted' },
+                { icon: Globe, title: 'Free Domain', desc: '.com domain included' },
+                { icon: BarChart3, title: 'Google Analytics', desc: 'Track your success' },
+                { icon: Mail, title: 'Professional Email', desc: 'yourname@yourdomain.com' },
+              ].map((item, _index) => (
+                <motion.div
+                  key={item.title}
+                  whileHover={{ scale: 1.05 }}
+                  className="text-center p-4 rounded-xl bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                >
+                  <div className="w-12 h-12 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <item.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <h4 className="font-bold text-gray-900 dark:text-white mb-2">{item.title}</h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">{item.desc}</p>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </motion.div>
@@ -493,14 +539,15 @@ const Features = () => {
               Ready to Experience the Difference?
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Join hundreds of satisfied clients who have transformed their business with WebCraft. 
-              Lets build something amazing together.
+              Join 15+ satisfied clients who have transformed their business with WebCraft. 
+              Let build something amazing together with our proven process and modern technology.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="btn-primary text-lg px-8 py-4"
+                onClick={() => window.open('https://wa.me/919987568422?text=Hi! I want to start my website project with WebCraft. Can we discuss?', '_blank')}
               >
                 <Rocket className="w-5 h-5 mr-2" />
                 Start Your Project
@@ -509,9 +556,10 @@ const Features = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="btn-outline text-lg px-8 py-4"
+                onClick={() => window.location.href = 'mailto:prashants1704@gmail.com?subject=Free Consultation Request&body=Hi Prashant,%0D%0A%0D%0AI would like to request a free consultation for my website project.%0D%0A%0D%0AThanks!'}
               >
-                <Users className="w-5 h-5 mr-2" />
-                See Case Studies
+                <Phone className="w-5 h-5 mr-2" />
+                Free Consultation
               </motion.button>
             </div>
           </div>

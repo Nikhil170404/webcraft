@@ -78,6 +78,7 @@ const Contact = () => {
     }, 2000);
   };
 
+  // Updated contact info from brochure
   const contactInfo = [
     {
       icon: Mail,
@@ -90,7 +91,7 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Call/WhatsApp',
-      info: '+91 9987568422',
+      info: '+91 99875 68422',
       description: 'Available Mon-Sat 9am to 8pm',
       color: 'from-green-500 to-emerald-500',
       link: 'https://wa.me/919987568422'
@@ -116,28 +117,29 @@ const Contact = () => {
     'Website Redesign',
     'E-commerce Store',
     'Mobile App',
-    'GST/Invoice Management System',
-    'Student Platform/EdTech',
+    'Business Website',
+    'Portfolio Website',
     'SEO & Marketing',
     'Maintenance & Support',
     'Other'
   ];
 
+  // Updated budget ranges to match brochure pricing
   const budgetRanges = [
-    'Under ₹50,000',
-    '₹50,000 - ₹1,00,000',
-    '₹1,00,000 - ₹2,50,000',
-    '₹2,50,000 - ₹5,00,000',
-    '₹5,00,000+',
+    'Under ₹15,000',
+    '₹15,000 - ₹25,000 (Starter)',
+    '₹25,000 - ₹40,000 (Professional)', 
+    '₹40,000 - ₹60,000 (Enterprise)',
+    '₹60,000+',
     'Let\'s Discuss'
   ];
 
   const timelines = [
     'ASAP',
     '1-2 weeks',
-    '1 month',
-    '2-3 months',
-    '3+ months',
+    '2-4 weeks (Standard)',
+    '1-2 months',
+    '2+ months',
     'Flexible'
   ];
 
@@ -207,23 +209,23 @@ const Contact = () => {
             className="inline-flex items-center px-4 py-2 rounded-full bg-secondary-100 dark:bg-secondary-900/30 text-secondary-600 dark:text-secondary-400 font-medium mb-4"
           >
             <MessageSquare className="w-4 h-4 mr-2" />
-            Get In Touch
+            Ready to Transform Your Business?
           </motion.div>
           
           <motion.h2
             variants={itemVariants}
             className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-gray-900 dark:text-white mb-6"
           >
-            Let Build Something{' '}
-            <span className="text-gradient">Amazing Together</span>
+            Get Your Free Consultation{' '}
+            <span className="text-gradient">Today</span>
           </motion.h2>
           
           <motion.p
             variants={itemVariants}
             className="text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
-            Ready to transform your digital presence? We love to hear about your project 
-            and discuss how we can help you achieve your business goals.
+            Ready to transform your digital presence? Let discuss your project and discover 
+            how we can help you succeed online with our professional web development services.
           </motion.p>
         </motion.div>
 
@@ -409,7 +411,7 @@ const Contact = () => {
                     required
                     rows={6}
                     className="form-textarea"
-                                          placeholder="Tell us about your project, goals, and any specific requirements..."
+                    placeholder="Tell us about your project, goals, and any specific requirements..."
                   />
                 </div>
 
@@ -484,18 +486,18 @@ const Contact = () => {
                   },
                   {
                     icon: Award,
-                    title: 'Proven Results',
-                    description: '99% client satisfaction rate'
+                    title: '100% Satisfaction',
+                    description: 'Money-back guarantee'
                   },
                   {
                     icon: Users,
-                    title: 'Expert Team',
-                    description: '5+ years of experience in web development'
+                    title: '24/7 Support',
+                    description: 'Always available to help you'
                   },
                   {
                     icon: Globe,
                     title: 'Modern Technology',
-                    description: 'Latest frameworks and best practices'
+                    description: 'React, Firebase, and AI-enhanced features'
                   },
                 ].map((item, index) => (
                   <motion.div
@@ -529,16 +531,16 @@ const Contact = () => {
                 ))}
               </div>
               <blockquote className="text-lg text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                WebCraft transformed our online presence completely. Our website now loads 3x faster 
-                and we have seen a 250% increase in conversions. Prashant expertise is unmatched!
+                WebCraft delivered exactly what we needed - a professional website that represents our 
+                business perfectly. The team was responsive, professional, and delivered on time!
               </blockquote>
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
-                  S
+                  A
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-900 dark:text-white">Sarah Johnson</div>
-                  <div className="text-gray-600 dark:text-gray-400 text-sm">CEO, TechStart Inc.</div>
+                  <div className="font-semibold text-gray-900 dark:text-white">Amit Sharma</div>
+                  <div className="text-gray-600 dark:text-gray-400 text-sm">Local Business Owner</div>
                 </div>
               </div>
             </motion.div>
@@ -553,7 +555,7 @@ const Contact = () => {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="w-full btn-outline flex items-center justify-center"
-                  onClick={() => window.open('https://wa.me/919987568422', '_blank')}
+                  onClick={() => window.open('https://wa.me/919987568422?text=Hi! I\'m interested in your web development services. Can we discuss my project?', '_blank')}
                 >
                   <Phone className="w-5 h-5 mr-2" />
                   WhatsApp Now
@@ -562,7 +564,7 @@ const Contact = () => {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="w-full btn-outline flex items-center justify-center"
-                  onClick={() => window.location.href = 'mailto:prashants1704@gmail.com'}
+                  onClick={() => window.location.href = 'mailto:prashants1704@gmail.com?subject=Web Development Inquiry&body=Hi Prashant,%0D%0A%0D%0AI\'m interested in your web development services. Can we discuss my project?%0D%0A%0D%0AThanks!'}
                 >
                   <MessageSquare className="w-5 h-5 mr-2" />
                   Send Email
@@ -571,9 +573,10 @@ const Contact = () => {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="w-full btn-outline flex items-center justify-center"
+                  onClick={() => document.getElementById('project')?.focus()}
                 >
                   <Calendar className="w-5 h-5 mr-2" />
-                  Schedule a Call
+                  Fill Form Above
                 </motion.button>
               </div>
             </motion.div>
@@ -599,20 +602,20 @@ const Contact = () => {
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                question: "How long does a typical project take?",
-                answer: "Most websites are completed within 2-4 weeks, depending on complexity and requirements."
+                question: "What's included in the starter package?",
+                answer: "Our starter package (₹15,000) includes a 5-8 page website, mobile responsive design, contact forms, basic SEO, free domain, SSL certificate, and 30-day support."
+              },
+              {
+                question: "How long does a project take?",
+                answer: "Most projects are completed within 2-4 weeks. Complex projects may take longer, but we'll give you a clear timeline during consultation."
               },
               {
                 question: "Do you provide ongoing support?",
-                answer: "Yes, we offer 24/7 support and maintenance packages to keep your website running smoothly."
+                answer: "Yes! All packages include free support (30-90 days depending on package). We also offer maintenance plans starting at ₹2,000/month."
               },
               {
-                question: "Can you help with SEO and marketing?",
-                answer: "Absolutely! We provide comprehensive SEO optimization and digital marketing services."
-              },
-              {
-                question: "What's included in the project cost?",
-                answer: "All projects include design, development, testing, deployment, and 30 days of free support."
+                question: "What makes WebCraft different?",
+                answer: "We offer 100% satisfaction guarantee, modern technology (React + Firebase), AI-enhanced features, and fair pricing with no hidden costs."
               },
             ].map((faq, index) => (
               <motion.div

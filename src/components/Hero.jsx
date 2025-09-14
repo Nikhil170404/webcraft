@@ -175,9 +175,9 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold mb-4 sm:mb-6 leading-tight"
         >
-          <span className="block">Build Your</span>
-          <span className="block text-gradient">Digital Future</span>
-          <span className="block">with WebCraft</span>
+          <span className="block">Transform Your Business with</span>
+          <span className="block text-gradient">AI-Enhanced Websites</span>
+          <span className="block">that are Fast, Beautiful, and Results-Driven</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -187,16 +187,15 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed px-4"
         >
-          We create{' '}
+          Professional Web Development Services for{' '}
           <motion.span
             animate={{ color: ['#2563eb', '#dc2626', '#2563eb'] }}
             transition={{ duration: 3, repeat: Infinity }}
             className="font-semibold"
           >
-            exceptional websites
+            Small Businesses
           </motion.span>{' '}
-          for small businesses with AI-enhanced technology, lightning-fast performance, 
-          and pixel-perfect design at fair prices.
+          starting at just ₹15,000. Get 100% satisfaction guarantee with fast delivery in 2-4 weeks.
         </motion.p>
 
         {/* Feature Pills */}
@@ -207,10 +206,10 @@ const Hero = () => {
           className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12 px-4"
         >
           {[
-            { icon: Zap, text: 'Lightning Fast', color: 'from-yellow-400 to-orange-500' },
-            { icon: Code2, text: 'AI-Enhanced', color: 'from-blue-400 to-purple-500' },
-            { icon: Palette, text: 'Beautiful Design', color: 'from-pink-400 to-red-500' },
-            { icon: Rocket, text: 'SEO Optimized', color: 'from-green-400 to-blue-500' },
+            { icon: Zap, text: '2-4 Weeks Delivery', color: 'from-yellow-400 to-orange-500' },
+            { icon: Code2, text: 'React + Firebase', color: 'from-blue-400 to-purple-500' },
+            { icon: Palette, text: '100% Satisfaction', color: 'from-pink-400 to-red-500' },
+            { icon: Rocket, text: '24/7 Support', color: 'from-green-400 to-blue-500' },
           ].map((feature, index) => (
             <motion.div
               key={feature.text}
@@ -297,10 +296,10 @@ const Hero = () => {
           <div className="glass rounded-xl sm:rounded-2xl p-4 sm:p-6 mx-4">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 text-center">
               {[
-                { number: '50+', label: 'Projects Completed' },
-                { number: '99%', label: 'Client Satisfaction' },
+                { number: '15+', label: 'Projects Completed' },
+                { number: '100%', label: 'Client Satisfaction' },
                 { number: '24/7', label: 'Support Available' },
-                { number: '2x', label: 'Faster Loading' },
+                { number: '2-4', label: 'Weeks Delivery' },
               ].map((stat, index) => (
                 <motion.div
                   key={stat.label}

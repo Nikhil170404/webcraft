@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Heart, Target, Award, Users, Code, Lightbulb } from 'lucide-react';
+import { Heart, Target, Award, Users, Code, Lightbulb, Zap, Shield } from 'lucide-react';
 
 const About = () => {
   const [ref, inView] = useInView({
@@ -58,27 +58,56 @@ const About = () => {
     },
   ];
 
+  // Updated milestones to match current status
   const milestones = [
     {
       year: '2020',
       title: 'Founded WebCraft',
-      description: 'Started with a vision to democratize professional web development for small businesses.',
+      description: 'Started with a vision to provide professional web development services for small businesses.',
     },
     {
       year: '2022',
       title: 'AI Integration',
-      description: 'Pioneered AI-enhanced development processes, reducing project timelines by 60%.',
+      description: 'Pioneered AI-enhanced development processes, reducing project timelines significantly.',
     },
     {
       year: '2024',
-      title: '50+ Happy Clients',
-      description: 'Reached a milestone of serving over 50 businesses with stunning digital solutions.',
+      title: '15+ Happy Clients',
+      description: 'Successfully delivered professional websites for various businesses across industries.',
     },
     {
       year: '2025',
-      title: 'Innovation Continues',
-      description: 'Leading the industry with cutting-edge technologies and design trends.',
+      title: 'Expansion & Growth',
+      description: 'Expanding services with new packages and technologies to serve more businesses.',
     },
+  ];
+
+  // Features that set us apart
+  const features = [
+    {
+      icon: Zap,
+      title: 'Fast Delivery',
+      description: '2-4 weeks completion time',
+      stat: '100%'
+    },
+    {
+      icon: Shield,
+      title: 'Quality Guarantee',
+      description: 'Money-back satisfaction guarantee',
+      stat: '24/7'
+    },
+    {
+      icon: Award,
+      title: 'Expert Team',
+      description: 'Experienced in modern technologies',
+      stat: '15+'
+    },
+    {
+      icon: Users,
+      title: 'Client Support',
+      description: 'Ongoing support and maintenance',
+      stat: '100%'
+    }
   ];
 
   return (
@@ -131,7 +160,7 @@ const About = () => {
             variants={itemVariants}
             className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-gray-900 dark:text-white mb-6"
           >
-            Crafting Digital Excellence{' '}
+            Digital Excellence{' '}
             <span className="text-gradient">Since 2020</span>
           </motion.h2>
           
@@ -139,10 +168,9 @@ const About = () => {
             variants={itemVariants}
             className="text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
-            We are not just developers – we are digital craftsmen who believe every small business 
-            deserves a world-class online presence. Founded by Prashant, WebCraft combines 
-            cutting-edge technology with creative design to deliver websites that do not just look 
-            amazing, but drive real business results.
+            We are passionate web developers who believe every small business deserves a professional 
+            online presence. WebCraft combines cutting-edge technology with beautiful design to deliver 
+            websites that not only look amazing but drive real business results.
           </motion.p>
         </motion.div>
 
@@ -159,18 +187,20 @@ const About = () => {
             </h3>
             <div className="space-y-4 text-gray-600 dark:text-gray-300">
               <p>
-                WebCraft was born from a simple observation: small businesses were struggling 
-                to compete online because professional web development was either too expensive 
-                or too complicated.
+                WebCraft was founded with a simple mission: to make professional web development 
+                accessible and affordable for small businesses. We noticed that many local businesses 
+                struggled to establish a strong online presence due to high costs and complicated processes.
               </p>
               <p>
-                As a passionate web developer, Prashant saw an opportunity to bridge this gap. 
-                By combining modern development practices with AI-enhanced workflows, we created 
-                a process that delivers enterprise-quality websites at small business prices.
+                By leveraging modern technologies like React and Firebase, combined with AI-enhanced 
+                workflows, we created a streamlined process that delivers enterprise-quality websites 
+                at small business prices. Our packages start at just ₹15,000, making professional 
+                web development accessible to everyone.
               </p>
               <p>
-                Today, we are proud to have helped dozens of businesses transform their online 
-                presence and achieve their digital goals. But we are just getting started.
+                Today, we are proud to have helped 15+ businesses transform their online presence and 
+                achieve their digital goals. Each project is a testament to our commitment to quality, 
+                speed, and customer satisfaction.
               </p>
             </div>
             
@@ -179,10 +209,13 @@ const About = () => {
               whileTap={{ scale: 0.95 }}
               className="mt-8"
             >
-              <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-xl font-medium hover:shadow-lg transition-all duration-300">
+              <button 
+                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-xl font-medium hover:shadow-lg transition-all duration-300"
+                onClick={() => window.open('https://wa.me/919987568422?text=Hi! I want to learn more about your web development process.', '_blank')}
+              >
                 <Lightbulb className="w-5 h-5 mr-2" />
                 Learn More About Our Process
-              </div>
+              </button>
             </motion.div>
           </motion.div>
 
@@ -213,8 +246,26 @@ const About = () => {
                   </p>
                   <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
                     Every website I create is a bridge between businesses and their dreams. 
-                    Technology should empower ,not complicate.
+                    Technology should empower, not complicate. Let build something amazing together.
                   </p>
+                  <div className="mt-4 flex justify-center space-x-4">
+                    <motion.button
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300"
+                      onClick={() => window.location.href = 'mailto:prashants1704@gmail.com'}
+                    >
+                      📧
+                    </motion.button>
+                    <motion.button
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300"
+                      onClick={() => window.open('https://wa.me/919987568422', '_blank')}
+                    >
+                      💬
+                    </motion.button>
+                  </div>
                 </div>
               </motion.div>
 
@@ -271,18 +322,60 @@ const About = () => {
           </div>
         </motion.div>
 
+        {/* What Sets Us Apart */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          className="mb-20"
+        >
+          <motion.div variants={itemVariants} className="text-center mb-12">
+            <h3 className="text-2xl lg:text-3xl font-display font-bold text-gray-900 dark:text-white mb-4">
+              What Sets Us Apart
+            </h3>
+            <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              Why businesses choose WebCraft for their web development needs.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((feature, _index) => (
+              <motion.div
+                key={feature.title}
+                variants={itemVariants}
+                whileHover={{ y: -5 }}
+                className="card card-hover text-center group"
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-xl mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <feature.icon className="w-8 h-8 text-white" />
+                </div>
+                <div className="text-2xl font-display font-bold text-gradient mb-2">
+                  {feature.stat}
+                </div>
+                <h4 className="text-lg font-display font-bold text-gray-900 dark:text-white mb-3">
+                  {feature.title}
+                </h4>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
+                  {feature.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
         {/* Timeline Section */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
+          className="mb-16"
         >
           <motion.div variants={itemVariants} className="text-center mb-12">
             <h3 className="text-2xl lg:text-3xl font-display font-bold text-gray-900 dark:text-white mb-4">
               Our Journey
             </h3>
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              From a one-person startup to a growing force in web development.
+              From a passionate idea to a growing web development service helping businesses succeed online.
             </p>
           </motion.div>
 
@@ -325,6 +418,44 @@ const About = () => {
                   <div className="flex-1 lg:block hidden" />
                 </motion.div>
               ))}
+            </div>
+          </div>
+        </motion.div>
+
+        {/* CTA Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6, delay: 1.0 }}
+          className="text-center"
+        >
+          <div className="card p-8 lg:p-12 bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20">
+            <h3 className="text-2xl lg:text-3xl font-display font-bold text-gray-900 dark:text-white mb-4">
+              Ready to Start Your Project?
+            </h3>
+            <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+              Join our satisfied clients and transform your business with a professional website. 
+              Get started today with packages starting at just ₹15,000.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="btn-primary text-lg px-8 py-4"
+                onClick={() => window.open('https://wa.me/919987568422?text=Hi! I want to start a new website project. Can we discuss?', '_blank')}
+              >
+                <Code className="w-5 h-5 mr-2" />
+                Start Your Project
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="btn-outline text-lg px-8 py-4"
+                onClick={() => window.location.href = 'mailto:prashants1704@gmail.com?subject=Project Consultation&body=Hi Prashant,%0D%0A%0D%0AI would like to discuss my website project with you.%0D%0A%0D%0AThanks!'}
+              >
+                <Users className="w-5 h-5 mr-2" />
+                Get Consultation
+              </motion.button>
             </div>
           </div>
         </motion.div>
