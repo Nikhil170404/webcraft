@@ -16,7 +16,9 @@ import {
   Shield,
   Users,
   Clock,
-  Award
+  Award,
+  DollarSign,
+  TrendingUp
 } from 'lucide-react';
 
 const Services = () => {
@@ -25,9 +27,9 @@ const Services = () => {
     threshold: 0.1,
   });
 
-  const [activeService, setActiveService] = useState(0);
+  const [activeService, setActiveService] = useState(1); // Set Professional as default
 
-  // Updated services based on the brochure pricing
+  // Updated services based on the new brochure pricing with setup + monthly fees
   const services = [
     {
       icon: Globe,
@@ -36,22 +38,24 @@ const Services = () => {
       shortDesc: 'Perfect for small businesses, startups, and local shops starting their digital journey.',
       fullDesc: 'Our Starter package includes everything you need to establish a professional online presence. Designed specifically for small businesses, startups, and local shops.',
       features: [
-        '5-8 Page Website',
+        '4-5 Page Website',
         'Mobile Responsive Design',
         'Contact Forms & Maps',
         'Basic SEO Setup',
-        'Free .com Domain',
+        'Free .com Domain (first year)',
         'SSL Certificate',
-        '1GB SSD Hosting',
-        'Google Analytics',
-        'Professional Email',
-        'Social Integration',
-        '2-Week Delivery',
-        '30-Day Support'
+        '500MB SSD Hosting',
+        '2 Business Emails',
+        '1-Week Delivery',
+        '20-Day Support',
+        'Monthly Maintenance',
+        'Security Updates'
       ],
       bestFor: 'Doctors, lawyers, restaurants, services',
-      price: '₹15,000',
-      originalPrice: '₹20,000',
+      setupPrice: '₹9,999',
+      monthlyPrice: '₹499/month',
+      originalPrice: '₹15,000',
+      savingsText: 'SAVE ₹5,000 vs competitors!',
       color: 'from-blue-500 to-cyan-500',
       bgColor: 'from-blue-50 to-cyan-50',
     },
@@ -62,26 +66,29 @@ const Services = () => {
       shortDesc: 'Ideal for growing businesses and online stores that need advanced features.',
       fullDesc: 'Our Professional package offers comprehensive solutions for growing businesses, online stores, and companies ready to scale their digital presence.',
       features: [
-        '10-15 Page Website',
-        'E-commerce Ready',
-        'Payment Gateway Integration',
-        'Advanced SEO Optimization',
-        'Blog Management System',
-        'Social Auto-Integration',
-        'Email Marketing Setup',
+        '8-10 Page Website',
+        'E-commerce Ready (30 products)',
+        'Payment Gateway Setup',
+        'Advanced SEO + Analytics',
+        'Blog Setup',
+        'Social Integration',
+        'Email Marketing (500 contacts)',
         'Live Chat Widget',
         'WhatsApp Integration',
-        '3GB SSD Hosting',
-        'Google My Business Setup',
-        'Performance Optimization',
-        '3-Week Delivery',
-        '90-Day Support'
+        '1GB SSD Hosting',
+        '5 Business Emails',
+        '2-Week Delivery',
+        '30-Day Support',
+        'Monthly Updates & Maintenance'
       ],
       bestFor: 'Retail, coaches, agencies, e-commerce',
-      price: '₹25,000',
-      originalPrice: '₹35,000',
+      setupPrice: '₹18,999',
+      monthlyPrice: '₹799/month',
+      originalPrice: '₹25,000',
+      savingsText: 'SAME PRICE, MORE VALUE!',
       color: 'from-green-500 to-emerald-500',
       bgColor: 'from-green-50 to-emerald-50',
+      isPopular: true,
     },
     {
       icon: Code,
@@ -91,50 +98,53 @@ const Services = () => {
       fullDesc: 'Our Enterprise package provides unlimited customization and advanced features for large businesses, manufacturing companies, and technology firms.',
       features: [
         'Unlimited Pages',
-        'Full E-commerce Store',
+        'Full E-commerce (unlimited products)',
         'Custom AI Chatbot',
         'Analytics Dashboard',
-        'Multi-language Support',
-        'User Registration System',
+        'Multi-language Support (2 languages)',
+        'User Registration',
         'Custom Admin Panel',
-        'API Integration',
-        'Advanced Security Features',
-        'Custom Database',
-        '10GB Premium Hosting',
+        'API Integration (3 integrations)',
+        'Advanced Security',
+        '3GB Premium Hosting',
+        '10 Business Emails',
         'Monthly Reports',
         'Priority 24/7 Support',
-        '4-Week Development',
-        '6-Month Support'
+        '3-Week Delivery',
+        '60-Day Support',
+        'Complete Monthly Maintenance'
       ],
       bestFor: 'Manufacturing, large retail, tech companies',
-      price: '₹40,000',
-      originalPrice: '₹60,000',
+      setupPrice: '₹35,999',
+      monthlyPrice: '₹1,299/month',
+      originalPrice: '₹40,000',
+      savingsText: '₹4,000 CHEAPER!',
       color: 'from-purple-500 to-pink-500',
       bgColor: 'from-purple-50 to-pink-50',
     }
   ];
 
-  // Additional services
+  // Additional services - updated pricing
   const additionalServices = [
     {
       icon: Search,
       title: 'SEO & Digital Marketing',
       shortDesc: 'Get found online and attract more customers organically.',
-      price: 'Starting at ₹5,000/month',
+      price: 'Starting at ₹3,000/month',
       color: 'from-orange-500 to-red-500',
     },
     {
       icon: Smartphone,
       title: 'Mobile App Development',
       shortDesc: 'Native and cross-platform apps for iOS and Android.',
-      price: 'Starting at ₹50,000',
+      price: 'Starting at ₹45,000',
       color: 'from-indigo-500 to-purple-500',
     },
     {
       icon: Zap,
       title: 'Website Maintenance',
       shortDesc: 'Keep your website updated, secure, and running smoothly.',
-      price: 'Starting at ₹2,000/month',
+      price: 'Included in all packages',
       color: 'from-yellow-500 to-orange-500',
     },
   ];
@@ -203,7 +213,7 @@ const Services = () => {
             className="inline-flex items-center px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 font-medium mb-4"
           >
             <Palette className="w-4 h-4 mr-2" />
-            Choose Your Perfect Package
+            🎯 Choose Your Perfect Package
           </motion.div>
           
           <motion.h2
@@ -211,16 +221,24 @@ const Services = () => {
             className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-gray-900 dark:text-white mb-6"
           >
             Professional Web Development Services{' '}
-            <span className="text-gradient">At Fair Prices</span>
+            <span className="text-gradient">Starting at ₹9,999</span>
           </motion.h2>
           
           <motion.p
             variants={itemVariants}
-            className="text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8"
           >
             Transform Your Business with AI-Enhanced Websites that are Fast, Beautiful, and Results-Driven. 
-            100% Satisfaction Guarantee with 2-4 weeks delivery.
+            Setup Fee + Monthly Support = Complete Peace of Mind
           </motion.p>
+
+          {/* Value Proposition Banner */}
+          <motion.div
+            variants={itemVariants}
+            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-full font-bold text-sm mb-8"
+          >
+            💰 BEAT ANY COMPETITOR PRICE + GET ONGOING MONTHLY SUPPORT INCLUDED! 🚀
+          </motion.div>
         </motion.div>
 
         {/* Main Service Packages */}
@@ -236,15 +254,15 @@ const Services = () => {
               variants={itemVariants}
               whileHover={{ y: -10, scale: 1.02 }}
               className={`card card-hover cursor-pointer group relative overflow-hidden ${
-                index === 1 ? 'ring-2 ring-primary-500 ring-opacity-50' : ''
+                service.isPopular ? 'ring-2 ring-primary-500 ring-opacity-50 transform scale-105' : ''
               }`}
               onClick={() => setActiveService(index)}
             >
-              {/* Popular badge for Professional */}
-              {index === 1 && (
+              {/* Popular badge */}
+              {service.isPopular && (
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
                   <div className="bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-6 py-1 rounded-full text-sm font-medium shadow-lg">
-                    PROFESSIONAL
+                    MOST POPULAR
                   </div>
                 </div>
               )}
@@ -270,14 +288,18 @@ const Services = () => {
                   {service.shortDesc}
                 </p>
 
+                {/* New Pricing Structure */}
                 <div className="mb-6">
                   <div className="flex items-center justify-center gap-2 mb-2">
                     <span className="text-2xl font-display font-bold text-gray-900 dark:text-white">
-                      {service.price}
+                      {service.setupPrice}
                     </span>
-                    <span className="text-lg text-gray-500 line-through">
-                      {service.originalPrice}
-                    </span>
+                  </div>
+                  <div className="text-sm text-green-600 dark:text-green-400 font-semibold mb-2">
+                    + {service.monthlyPrice}
+                  </div>
+                  <div className="text-xs bg-red-500 text-white px-3 py-1 rounded-full font-bold mb-2">
+                    {service.savingsText}
                   </div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">
                     Best For: {service.bestFor}
@@ -301,13 +323,88 @@ const Services = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className={`w-full ${index === 1 ? 'btn-primary' : 'btn-outline'} text-sm py-3`}
+                  className={`w-full ${service.isPopular ? 'btn-primary' : 'btn-outline'} text-sm py-3`}
+                  onClick={() => window.open(`https://wa.me/919987568422?text=Hi! I'm interested in the ${service.title} (${service.setupPrice} + ${service.monthlyPrice}). Can we discuss?`, '_blank')}
                 >
                   Get Started
                 </motion.button>
               </div>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Why Choose Us Section - Updated */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          className="mb-16"
+        >
+          <motion.div variants={itemVariants} className="card p-8 bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-display font-bold text-gray-900 dark:text-white mb-4">
+                🏆 Why WebCraft Beats the Competition
+              </h3>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <div className="text-center">
+                <div className="text-2xl mb-2">💰</div>
+                <div className="font-bold text-gray-900 dark:text-white">30% Cheaper Setup</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl mb-2">🔄</div>
+                <div className="font-bold text-gray-900 dark:text-white">Monthly Support Included</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl mb-2">⚡</div>
+                <div className="font-bold text-gray-900 dark:text-white">Faster Delivery</div>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                {
+                  icon: Award,
+                  title: '100% Satisfaction',
+                  description: 'Money-back guarantee'
+                },
+                {
+                  icon: Zap,
+                  title: 'Fast Delivery',
+                  description: '1-3 weeks completion'
+                },
+                {
+                  icon: Users,
+                  title: '24/7 Support',
+                  description: 'Always here to help'
+                },
+                {
+                  icon: Shield,
+                  title: 'Monthly Maintenance',
+                  description: 'Ongoing updates included'
+                },
+              ].map((item, index) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                  transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
+                  className="text-center"
+                >
+                  <div className="w-12 h-12 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <item.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
+                    {item.title}
+                  </h4>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm">
+                    {item.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </motion.div>
 
         {/* Additional Services */}
@@ -392,7 +489,7 @@ const Services = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="btn-primary flex items-center justify-center"
-                    onClick={() => window.open('https://wa.me/919987568422', '_blank')}
+                    onClick={() => window.open(`https://wa.me/919987568422?text=Hi! I want to get started with the ${services[activeService].title} (${services[activeService].setupPrice} + ${services[activeService].monthlyPrice}). Can we discuss?`, '_blank')}
                   >
                     Get Started Now
                     <ArrowRight className="w-5 h-5 ml-2" />
@@ -402,7 +499,7 @@ const Services = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="btn-outline flex items-center justify-center"
-                    onClick={() => window.location.href = 'mailto:prashants1704@gmail.com'}
+                    onClick={() => window.location.href = `mailto:prashants1704@gmail.com?subject=${services[activeService].title} Inquiry&body=Hi Prashant,%0D%0A%0D%0AI'm interested in the ${services[activeService].title} (${services[activeService].setupPrice} + ${services[activeService].monthlyPrice}). Can we discuss?%0D%0A%0D%0AThanks!`}
                   >
                     Contact Us
                   </motion.button>
@@ -411,7 +508,7 @@ const Services = () => {
 
               <div>
                 <h4 className="text-xl font-display font-bold text-gray-900 dark:text-white mb-6">
-                  What&apos;s Included:
+                  What Included:
                 </h4>
                 
                 <div className="space-y-3">
@@ -434,16 +531,22 @@ const Services = () => {
                 </div>
 
                 <div className="mt-8 p-6 bg-gray-50 dark:bg-gray-800 rounded-xl">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-gray-600 dark:text-gray-400">Package Price:</span>
-                    <div className="text-right">
-                      <span className="text-2xl font-bold text-gray-900 dark:text-white">
-                        {services[activeService].price}
-                      </span>
-                      <span className="text-lg text-gray-500 line-through ml-2">
-                        {services[activeService].originalPrice}
-                      </span>
+                  <div className="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                      <span className="text-gray-600 dark:text-gray-400 text-sm">Setup Fee:</span>
+                      <div className="text-2xl font-bold text-gray-900 dark:text-white">
+                        {services[activeService].setupPrice}
+                      </div>
                     </div>
+                    <div>
+                      <span className="text-gray-600 dark:text-gray-400 text-sm">Monthly Support:</span>
+                      <div className="text-xl font-bold text-green-600 dark:text-green-400">
+                        {services[activeService].monthlyPrice}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-xs bg-red-500 text-white px-3 py-1 rounded-full font-bold mb-4 inline-block">
+                    {services[activeService].savingsText}
                   </div>
                   <div className="grid grid-cols-2 gap-4 text-sm">
                     <div className="flex items-center">
@@ -452,7 +555,7 @@ const Services = () => {
                     </div>
                     <div className="flex items-center">
                       <Clock className="w-4 h-4 text-blue-500 mr-2" />
-                      <span className="text-gray-600 dark:text-gray-400">2-4 Weeks Delivery</span>
+                      <span className="text-gray-600 dark:text-gray-400">Fast Delivery</span>
                     </div>
                   </div>
                 </div>
@@ -480,65 +583,6 @@ const Services = () => {
           ))}
         </div>
 
-        {/* Why Choose Us Section */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          className="mb-16"
-        >
-          <motion.div variants={itemVariants} className="text-center mb-8">
-            <h3 className="text-2xl font-display font-bold text-gray-900 dark:text-white mb-4">
-              Why Choose WebCraft?
-            </h3>
-          </motion.div>
-
-          <motion.div variants={itemVariants} className="card p-8">
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                {
-                  icon: Award,
-                  title: '100% Satisfaction',
-                  description: 'Money-back guarantee'
-                },
-                {
-                  icon: Zap,
-                  title: 'Fast Delivery',
-                  description: '2-4 weeks completion'
-                },
-                {
-                  icon: Users,
-                  title: '24/7 Support',
-                  description: 'Always here to help'
-                },
-                {
-                  icon: Shield,
-                  title: 'Free Revisions',
-                  description: 'Unlimited changes'
-                },
-              ].map((item, index) => (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                  transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                  className="text-center"
-                >
-                  <div className="w-12 h-12 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <item.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
-                    {item.title}
-                  </h4>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">
-                    {item.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </motion.div>
-
         {/* CTA Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -551,15 +595,15 @@ const Services = () => {
               Ready to Transform Your Business?
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-              Let&apos;s discuss your project and create a custom solution that drives real results for your business. 
-              Get started today with our professional web development services.
+              Get your free consultation today and discover how we can help you succeed online with our 
+              professional web development services. Setup fee + monthly support = complete peace of mind.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="btn-primary text-lg px-8 py-4"
-                onClick={() => window.open('https://wa.me/919987568422', '_blank')}
+                onClick={() => window.open('https://wa.me/919987568422?text=Hi! I want to get a free consultation for my website project. Can we discuss the packages?', '_blank')}
               >
                 <BarChart3 className="w-5 h-5 mr-2" />
                 Get Free Consultation
@@ -568,10 +612,38 @@ const Services = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="btn-outline text-lg px-8 py-4"
-                onClick={() => window.location.href = 'mailto:prashants1704@gmail.com'}
+                onClick={() => window.location.href = 'mailto:prashants1704@gmail.com?subject=Free Consultation Request&body=Hi Prashant,%0D%0A%0D%0AI would like to request a free consultation for my website project.%0D%0A%0D%0AThanks!'}
               >
-                Contact Us
+                <DollarSign className="w-5 h-5 mr-2" />
+                Email Us
               </motion.button>
+            </div>
+
+            {/* Contact Info Footer */}
+            <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+              <div className="grid md:grid-cols-3 gap-4 text-center">
+                <div>
+                  <div className="text-2xl mb-2">📧</div>
+                  <div className="text-sm font-medium">Email Us</div>
+                  <a href="mailto:prashants1704@gmail.com" className="text-primary-600 dark:text-primary-400 text-sm">
+                    prashants1704@gmail.com
+                  </a>
+                </div>
+                <div>
+                  <div className="text-2xl mb-2">📱</div>
+                  <div className="text-sm font-medium">WhatsApp</div>
+                  <a href="https://wa.me/919987568422" className="text-primary-600 dark:text-primary-400 text-sm" target="_blank" rel="noopener noreferrer">
+                    +91 99875 68422
+                  </a>
+                </div>
+                <div>
+                  <div className="text-2xl mb-2">📍</div>
+                  <div className="text-sm font-medium">Location</div>
+                  <div className="text-gray-600 dark:text-gray-400 text-sm">
+                    Mumbai, Maharashtra<br />India
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>
